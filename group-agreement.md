@@ -5,6 +5,7 @@
 - Concept questions will be discussed in around tale format where everyone must contribute and no single person speaks for more than a few minutes.
 - Start morning at 9am with a mini sprint planning session to assign and plan daily tasks
 - End each day with a mini sprint retrospective to review progress.
+
 # Conflict plan
 - Any type of conflict lasting more than 5 minutes or that is stopping group progress needs to be documented in the project management tool and discussed with the whole group.
 - Non-blocked conflicts can be discussed in sprint sessions

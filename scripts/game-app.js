@@ -9,15 +9,17 @@ var image3 = document.getElementById('img3');
 var imageArray = [image1, image2, image3];
 
 // TODO: this is a fake function that we're using for testing. Delete before pushing.
-function loadCurrentUser(){
-  return {username: 'Quinn', rounds: 0, wins:0};
-}
+// var currentUser = {username: 'Quinn', rounds: 0, wins:0};
 
 // get data and name
-if (loadCurrentUser() === null) { //TODO - get persistance
+if (Data.loadCurrentUser() === null) {
+  var currentUser = {username: 'Quinn', rounds: 0, wins:0};
+  //TODO - get persistance
   // load settings page
+  // window.location.href = 'options.html';
 } else {
-  var currentUser = loadCurrentUser(); //TODO - get persistance
+  var currentUser = Data.loadCurrentUser(); //TODO - get persistance
+  console.log(currentUser);
 }
 
 // when play button is clicked
@@ -31,9 +33,9 @@ playButton.addEventListener('click', function(event){
   // if three img are same
   updateWins();
   // update localStorage with new currentUser
-  saveUser(currentUser); //TODO - get persistance
+  Data.saveUser(currentUser); //TODO - get persistance
   // get new data from localStorage
-  loadCurrentUser(); //TODO - get persistance
+  Data.loadCurrentUser(); //TODO - get persistance
 });
 
 // Function to get three random emoji images.

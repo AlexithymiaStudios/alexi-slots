@@ -2,8 +2,8 @@
 
 function User(userName, rounds, wins) {
   this.userName = userName;
-  this.rounds = rounds;
-  this.wins = wins;
+  this.rounds = rounds ? rounds : 0;
+  this.wins = wins ? wins : 0;
 }
 
 

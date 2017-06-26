@@ -13,7 +13,7 @@ var imageArray = [image1, image2, image3];
 
 // get data and name
 if (Data.loadCurrentUser() === null) {
-  var currentUser = {username: 'Quinn', rounds: 0, wins:0};
+  var currentUser = {userName: 'Quinn', rounds: 0, wins:0};
   //TODO - get persistance
   // load settings page
   // window.location.href = 'options.html';

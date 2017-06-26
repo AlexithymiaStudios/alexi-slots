@@ -4,7 +4,9 @@
 
 - As a gambling fan, Stefan would like a settings page that asks for his name so that it is a personalized experience - just like Las Vegas.
 
-- As a gambling fan, Stefan wants to track his total wins, which emojis have popped up, and which emojis have won in the past.
+- As a gambling fan, Stefan wants to be able to have multiple user logins so that the rest of his family's gameplay does not affect his stats.
+
+- As a gambling fan, Stefan wants to track his total wins vs rounds played.
 
 - As a gambling fan, Stefan wants a slot machine game that includes at least three rotating images that will align after a few seconds to either have a winning match or a lose.
 
@@ -19,6 +21,8 @@
 - As a commuter, Emily doesn't want any sounds from the game, so that she can listen to music while playing.
 
 - As a millennial who loves emojis, Emily wants to play a game the incorporates emojis into the basic game play.
+
+- As a commuter playing the game on her tablet, Emily wants an easily navigable site and simple play game.
 
 ## STRETCH GOALS
 

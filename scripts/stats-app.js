@@ -17,17 +17,19 @@ console.log(userNames);
 console.log(rounds);
 console.log(wins);
 
-var data = {
-  datasets: [{
-    data: [rounds[0],wins[0]]
-  }],
-  labels: [
-    'Round',
-    'Wins'
-  ]
-};
-
 for (var j = 0; j < userNames.length; j++){
+
+  var data = {
+    datasets: [{
+      data: [rounds[j],wins[j]],
+      backgroundColor: ['red', 'blue']
+    }],
+    labels: [
+      'Round',
+      'Wins'
+    ]
+  };
+
   var h3 = document.createElement('h3');
   console.log('hi');
   var canvas = document.createElement('canvas');

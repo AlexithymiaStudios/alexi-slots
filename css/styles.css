@@ -4,6 +4,10 @@ img {
   width:;
 }
 
+#chart {
+  padding: 0 300px;
+}
+
 /* Grid Implementation */
 .row,
 .column {

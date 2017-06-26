@@ -7,4 +7,4 @@ Steven works as a receptionist and is often bored at work. He wants to play a ga
 Stefan enjoys gambling in Vegas, but lives in Alaska so he doesn't get to go there very often. He wants to simulate a Los Vegas slot machine experience without having to travel. He wants a game that simulates spending and earning money, here he can track his total earnings.
 
 ## Commuter w/ Tablet
-Emily rides the bus into the city everyday for work. She likes playing games on her tablet to waste time. She loves games of chance and those that incorporate one of her favorite things... emojis!
+Emily is a millennial who rides the bus into the city everyday for school. She likes playing games on her tablet to waste time. She loves games of chance and those that incorporate one of her favorite things... emojis!

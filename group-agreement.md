@@ -16,8 +16,7 @@
 - If a team member is struggling for more than 15 minutes, grab another team member and do some pair programming to work it out.
 - We will establish general naming conventions at the start of our project, and if there is any conflict, it will be brought to the group.
 - A task is complete is complete when it's hit MVP and been successfully merged into development by another team member.
-- Each day a new person will be in charge of project management and PRs.
-- If we are working int he same file, we will pair program.
+- If we are working in the same file, we will pair program.
 # Git Process
 - Merge individual branches to master throughout the day, and then merge to gh-pages at the end of the day at sprint retrospective.
 - We will merge onto the master branch as we go, and work on individually named branches as we work.

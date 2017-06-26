@@ -10,6 +10,7 @@ function insertNewUser() {
   input.setAttribute('type', 'text');
   input.setAttribute('name', 'userNameSelected');
   input.setAttribute('value', 'Enter your name');
+  // input.setAttribute('pattern', /^[a-zA-Z\-]+$/);
   label.textContent = 'New User';
   form.appendChild(label);
   form.appendChild(input);
@@ -56,7 +57,11 @@ console.log(newUserForm);
 
 addNewUserButton.addEventListener('click', function(event) {
   event.preventDefault();
-  console.log(newUserForm.userNameSelected.value);
+  if (checkIfValid(newUserForm.userNameSelected)){
+    var newUser = new User(newUserForm.userNameSelected.value);
+    Data.saveUser(newUser);
+    console.log(newUserForm.userNameSelected.value);
+  };
 });
 
 showPastUsersButton.addEventListener('click', function(event) {
@@ -66,8 +71,15 @@ showPastUsersButton.addEventListener('click', function(event) {
 
 
 
-
-
+function checkIfValid(formInput) {
+  var validUsername = formInput.value.match(/^[a-zA-Z\-]+$/);
+  if (validUsername === null){
+    alert("Your first name is not valid. Only characters A-Z, a-z and '-' are  acceptable.");
+    formInput.focus();
+    return false;
+  };
+  return true;
+};
 
 
 

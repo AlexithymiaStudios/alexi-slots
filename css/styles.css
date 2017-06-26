@@ -1,0 +1,76 @@
+
+img {
+  height:;
+  width:;
+}
+
+/* Grid Implementation */
+.row,
+.column {
+  box-sizing: border-box;
+}
+
+.row::before,
+.row::after {
+  content: "";
+  display: table;
+}
+
+.row::after {
+  clear:both;
+}
+
+.column {
+  position: relative;
+  float: left;
+}
+
+/*one column is 8.33% wide*/
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 24.98%;
+}
+
+.col-4 {
+  width: 33.32%
+}
+
+.col-5 {
+  width: 41.65%
+}
+
+.col-6 {
+  width: 49.98%
+}
+
+.col-7 {
+  width: 58.3%
+}
+
+.col-8 {
+  width: 66.66%
+}
+
+.col-9 {
+  width: 74.97%
+}
+
+.col-10 {
+  width: 83.3%
+}
+
+.col-11 {
+  width: 91.66%
+}
+
+.col-12 {
+  width: 100%
+}

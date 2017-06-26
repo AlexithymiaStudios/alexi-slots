@@ -22,6 +22,9 @@ Data.loadCurrentUser = function() {
 Data.saveUser = function(user) {
   localStorage.setItem('currentUser', user.userName);
   var usersToEdit = JSON.parse(localStorage.getItem('users'));
+  if(usersToEdit === null) {
+    usersToEdit = {};
+  }
   usersToEdit[user.userName] = user;
   localStorage.setItem('users', JSON.stringify(usersToEdit));
 };
@@ -49,10 +52,3 @@ Data.getAllUsers = function() {
     return temp;
   }
 };
-
-
-loadCurrentUser ();
-//return user
-saveUser (user);
-loadUser(user);
-getAllUsers();

@@ -47,7 +47,7 @@ Data.getAllUsers = function() {
   } else {
     var temp = [];
     for (var each in allUsersLoad) {
-      temp.append(allUsersLoad[each]);
+      temp.push(allUsersLoad[each]);
     }
     return temp;
   }

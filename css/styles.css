@@ -44,6 +44,20 @@ nav li {
 #game div {
   text-align: center;
   border: 10px dotted yellow;
+  overflow: hidden;
+}
+
+@keyframes spinning {
+    0%   {top: -209px;}
+    25%  {top: -71px;}
+    50%  {top: 0px;filter: blur(0px);}
+    75%  {top: 71px;}
+    100% {top: 209px;}
+}
+
+@keyframes finish {
+    0%   {top: -209px;}
+    100% {top: 0px;}
 }
 
 #game .col-1andHalf {
@@ -51,10 +65,27 @@ nav li {
 }
 
 #game div img {
-  border: 1px solid white;
   margin: 60px 0px;
   padding: 10px;
+  position: relative;
 }
+
+#game #animationGo img {
+  animation-name: spinning;
+  animation-iteration-count: 2;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  filter: blur(10px);
+}
+
+#game #finished img {
+  animation-name: finish;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  filter: blur(0px);
+}
+
 /******************* GRID STYLES *******************/
 
 

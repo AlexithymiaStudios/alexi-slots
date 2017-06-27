@@ -1,9 +1,9 @@
 'use strict';
 
-function User(userName, rounds, wins) {
+function User(userName) {
   this.userName = userName;
-  this.rounds = rounds ? rounds : 0;
-  this.wins = wins ? wins : 0;
+  this.rounds = 0;
+  this.jackpots = 0;
 }
 
 var Data = {};

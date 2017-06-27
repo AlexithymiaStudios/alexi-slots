@@ -10,7 +10,7 @@ var userNameSpan = document.getElementById('userName'); // Is this id name okay?
 var imageArray = [image1, image2, image3];
 
 // TODO: this is a fake function that we're using for testing. Delete before pushing.
-// var currentUser = {username: 'Quinn', rounds: 0, wins:0};
+// var currentUser = {username: 'Quinn', rounds: 0, jackpots:0};
 
 // get data and name
 if (Data.loadCurrentUser() === null) {
@@ -64,9 +64,9 @@ function renderEmojis(){
 function updateWins(){
   var response = document.getElementById('response');
   if (currentEmojis[0] === currentEmojis[1] && currentEmojis[0] === currentEmojis[2]) {
-    // update wins and response in currentUser
-    currentUser.wins++;
-    response.textContent = 'You win!';
+    // update jackpots and response in currentUser
+    currentUser.jackpots++;
+    response.textContent = 'You hit the Jackpot!';
   } else {
     response.textContent = ' ';
   }

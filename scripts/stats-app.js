@@ -5,19 +5,19 @@ var chartParent = document.getElementById('chart');
 
 var userNames = [];
 var rounds = [];
-var wins = [];
+var jackpots = [];
 
 for (var i in allData){
   userNames.push(allData[i].userName);
   rounds.push(allData[i].rounds);
-  wins.push(allData[i].wins);
+  jackpots.push(allData[i].jackpots);
 }
 
 for (var j = 0; j < userNames.length; j++){
 
   var data = {
     datasets: [{
-      data: [rounds[j],wins[j]],
+      data: [rounds[j],jackpots[j]],
       backgroundColor: ['red', 'blue']
     }],
     labels: [

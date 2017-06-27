@@ -3,7 +3,6 @@
 /************** VARIABLES **************/
 var resetButton = document.getElementById('resetBalanceButton');
 
-
 function insertNewUser() {
   var form = document.createElement('form');
   var label = document.createElement('label');

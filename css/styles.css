@@ -21,7 +21,6 @@ main {
   padding: 0 50px;
 }
 
-
 /******************* NAVIGATION *******************/
 
 nav {
@@ -32,6 +31,23 @@ nav {
 }
 nav li {
   list-style-type: none;
+}
+
+/******************* OPTION *******************/
+form input {
+  color: black;
+}
+
+form {
+  border: 2px dashed white;
+  width: 200px;
+  height: 200px;
+  float:left;
+  font-size: 24px;
+  text-align: center;
+}
+button {
+  color: black;
 }
 
 /******************* GAME STYLES *******************/

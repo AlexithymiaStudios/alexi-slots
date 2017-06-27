@@ -55,6 +55,19 @@ nav li {
     100% {top: 209px;filter: blur(10px)}
 }
 
+@keyframes blinking {
+    0%   {background-color: red}
+    25%   {background-color: yellow}
+    50%  {background-color: blue}
+    100% {background-color: black}
+}
+
+.slotWindow {
+  animation-name: blinking;
+  animation-iteration-count: 4;
+  animation-duration: .4s;
+  /*animation-timing-function: linear;*/
+}
 
 #game .col-1andHalf {
   border: 1px solid black;
@@ -68,7 +81,7 @@ nav li {
 
 #game .animation {
   animation-name: spinning;
-  animation-iteration-count: 8;
+  animation-iteration-count: 16;
   animation-duration: .1s;
   animation-timing-function: linear;
   }

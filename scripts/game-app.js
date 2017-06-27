@@ -1,10 +1,12 @@
 'use strict';
 
+/*********** VARIABLE ***********/
 var emojiArray = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
 
+/*********** MAIN FLOW ***********/
 // get data and name
 if (Data.loadCurrentUser() === null) {
   //TODO - get persistance
@@ -17,18 +19,15 @@ if (Data.loadCurrentUser() === null) {
   renderUserName();
 }
 
+/*********** EVENT HANDLING ***********/
 // when play button is clicked
 playButton.addEventListener('click', function(event){
-  // Start animation
-  imageArray[i].setAttribute('id', 'animationGo');
   // picks a random img from emojiArray
   currentEmojis = getRandomEmojis();
   // update rounds in currentUser
   currentUser.rounds++;
   // update rendered image to DOM
   renderEmojis();
-  // Finish animation
-  imageArray[i].setAttribute('id', 'finished');
   // if three img are same
   updateWins();
   // update localStorage with new currentUser
@@ -37,6 +36,7 @@ playButton.addEventListener('click', function(event){
   Data.loadCurrentUser(); //TODO - get persistance
 });
 
+/*********** FUNCTION ***********/
 // Function to get three random emoji images.
 function getRandomEmojis(){
   var threeEmojis = [];
@@ -48,9 +48,14 @@ function getRandomEmojis(){
 }
 
 function renderEmojis(){
+  var divs = document.getElementsByClassName('slotWindow');
   for (var i = 0; i < currentEmojis.length; i++) {
-    imageArray[i].setAttribute('src', 'img/' + currentEmojis[i]);
-    imageArray[i].setAttribute('alt', currentEmojis[i]);
+    divs[i].removeChild(divs[i].lastChild);
+    var img = document.createElement('img');
+    img.setAttribute('src', 'img/' + currentEmojis[i]);
+    img.setAttribute('alt', currentEmojis[i]);
+    img.setAttribute('class','animation');
+    divs[i].append(img);
   }
 }
 

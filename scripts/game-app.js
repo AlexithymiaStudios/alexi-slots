@@ -3,14 +3,7 @@
 var emojiArray = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
-var image1 = document.getElementById('img1');
-var image2 = document.getElementById('img2');
-var image3 = document.getElementById('img3');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
-var imageArray = [image1, image2, image3];
-
-// TODO: this is a fake function that we're using for testing. Delete before pushing.
-// var currentUser = {username: 'Quinn', rounds: 0, jackpots:0};
 
 // get data and name
 if (Data.loadCurrentUser() === null) {

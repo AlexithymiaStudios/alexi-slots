@@ -182,6 +182,10 @@ button {
   }
 
 /******************* STATS *******************/
+main {
+  min-width: 975px;
+}
+
 canvas {
   min-width:200px;
   min-height: 200px;
@@ -189,6 +193,16 @@ canvas {
   float: left;
 }
 
+.userChart {
+  padding: 20px;
+  border: 5px solid #333333;
+  margin: 1% 3.5%;
+}
+#chart h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Roboto Mono', monospace;
+}
 .useChart  {
   display: inline;
 }

@@ -7,6 +7,18 @@ function User(userName) {
   this.pairs = 0;
 }
 
+function convertObjectToUser(object) {
+  var user = new User(object.userName);
+  user.rounds = object.rounds;
+  user.jackpots = object.jackpots;
+  user.pairs = object.pairs;
+  return user;
+}
+
+User.prototype.losses = function() {
+  return this.rounds - this.jackpots + this.pairs;
+};
+
 var Data = {};
 
 Data.loadCurrentUser = function() {
@@ -15,7 +27,7 @@ Data.loadCurrentUser = function() {
   if (currentUserLoad === null || usersLoad === null){
     return null;
   } else {
-    return JSON.parse(usersLoad) [currentUserLoad];
+    return convertObjectToUser(JSON.parse(usersLoad) [currentUserLoad]);
   };
 };
 
@@ -40,7 +52,7 @@ Data.loadUserName = function(userName) {
     return null;
   } else {
     localStorage.setItem('currentUser', userName);
-    return JSON.parse(usersLoad)[userName];
+    return convertObjectToUser(JSON.parse(usersLoad)[userName]);
   };
 };
 
@@ -51,7 +63,7 @@ Data.getAllUsers = function() {
   } else {
     var temp = [];
     for (var each in allUsersLoad) {
-      temp.push(allUsersLoad[each]);
+      temp.push(convertObjectToUser(allUsersLoad[each]));
     }
     return temp;
   }

@@ -4,13 +4,13 @@ var allData = Data.getAllUsers();
 var chartParent = document.getElementById('chart');
 
 var userNames = [];
-var rounds = [];
+var losses = [];
 var jackpots = [];
 var pairs = [];
 
 for (var i in allData){
   userNames.push(allData[i].userName);
-  rounds.push(allData[i].rounds);
+  losses.push(allData[i].losses());
   jackpots.push(allData[i].jackpots);
   pairs.push(allData[i].pairs);
 }
@@ -19,11 +19,11 @@ for (var j = 0; j < userNames.length; j++){
 
   var data = {
     datasets: [{
-      data: [rounds[j],jackpots[j], pairs[j]],
+      data: [losses[j],jackpots[j], pairs[j]],
       backgroundColor: ['red', 'blue', 'green']
     }],
     labels: [
-      'Rounds',
+      'Losses',
       'Jackpots',
       'Pairs'
     ]

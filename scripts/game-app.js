@@ -12,8 +12,9 @@ if (Data.loadCurrentUser() === null) {
   // load settings page
   window.location.href = 'options.html';
 } else {
-  var currentUser = Data.loadCurrentUser(); //TODO - get persistance
+  var currentUser = Data.loadCurrentUser();
   renderUserName();
+  renderBalance();
 }
 
 /*********** EVENT HANDLING ***********/
@@ -28,9 +29,11 @@ playButton.addEventListener('click', function(event){
   // if three img are same
   updateWins();
   // update localStorage with new currentUser
-  Data.saveUser(currentUser); //TODO - get persistance
+  Data.saveUser(currentUser);
   // get new data from localStorage
-  Data.loadCurrentUser(); //TODO - get persistance
+  Data.loadCurrentUser();
+  // Render new balance
+  renderBalance();
 });
 
 /*********** FUNCTION ***********/
@@ -75,4 +78,12 @@ function updateWins(){
 function renderUserName(){
   // update text content of the span
   userNameSpan.textContent = currentUser.userName;
+}
+
+// function to render new balance
+function renderBalance(){
+  // get refernece to span
+  var span = document.getElementById('balance');
+  // update HTML in span
+  span.textContent = currentUser.moneyBalance();
 }

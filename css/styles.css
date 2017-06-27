@@ -98,8 +98,9 @@ button {
 /******************* GAME STYLES *******************/
 
 #welcomeMessage {
-  text-align: center;
+  text-align: right;
   margin: 2% 0%;
+  float: right;
 }
 
 #game div {

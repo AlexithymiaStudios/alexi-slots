@@ -63,6 +63,8 @@ function updateWins(){
     // update wins and response in currentUser
     currentUser.wins++;
     response.textContent = 'You win!';
+  } else {
+    response.textContent = ' ';
   }
 }
 

@@ -23,14 +23,28 @@ main {
   padding: 0 50px;
 }
 
+h1 {
+  text-align: center;
+  font-family: 'Slackey', cursive;
+  background-image: url('../img/vegas-sign.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 60px;
+}
 /******************* NAVIGATION *******************/
 
 nav {
   text-align: center;
   list-style: none;
   background-color: red;
-  padding: 3%;
+  padding: 1%;
+  margin: 0px;
 }
+
+ul{
+  margin:0px;
+}
+
 nav li {
   list-style-type: none;
   font-size: 30px;

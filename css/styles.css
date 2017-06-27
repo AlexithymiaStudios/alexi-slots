@@ -66,7 +66,7 @@ nav li {
   position: relative;
 }
 
-#game #animationGo img {
+#game .animation {
   animation-name: spinning;
   animation-iteration-count: 20;
   animation-duration: .1s;

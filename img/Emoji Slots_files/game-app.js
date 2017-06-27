@@ -26,16 +26,12 @@ if (Data.loadCurrentUser() === null) {
 
 // when play button is clicked
 playButton.addEventListener('click', function(event){
-  // Start animation
-  imageArray[i].setAttribute('id', 'animationGo');
   // picks a random img from emojiArray
   currentEmojis = getRandomEmojis();
   // update rounds in currentUser
   currentUser.rounds++;
   // update rendered image to DOM
   renderEmojis();
-  // Finish animation
-  imageArray[i].setAttribute('id', 'finished');
   // if three img are same
   updateWins();
   // update localStorage with new currentUser
@@ -62,13 +58,9 @@ function renderEmojis(){
 }
 
 function updateWins(){
-  var response = document.getElementById('response');
   if (currentEmojis[0] === currentEmojis[1] && currentEmojis[0] === currentEmojis[2]) {
-    // update wins and response in currentUser
+    // update wins in currentUser
     currentUser.wins++;
-    response.textContent = 'You win!';
-  } else {
-    response.textContent = ' ';
   }
 }
 

@@ -2,7 +2,6 @@
 
 var allData = Data.getAllUsers();
 var chartParent = document.getElementById('chart');
-// console.log(allData);
 
 var userNames = [];
 var rounds = [];
@@ -13,9 +12,6 @@ for (var i in allData){
   rounds.push(allData[i].rounds);
   wins.push(allData[i].wins);
 }
-console.log(userNames);
-console.log(rounds);
-console.log(wins);
 
 for (var j = 0; j < userNames.length; j++){
 
@@ -29,13 +25,16 @@ for (var j = 0; j < userNames.length; j++){
       'Wins'
     ]
   };
-
+  var userDiv = document.createElement('div');
+  userDiv.setAttribute('class', 'column col-4 userChart');
   var h3 = document.createElement('h3');
-  console.log('hi');
+  userDiv.append(h3);
   var canvas = document.createElement('canvas');
   h3.textContent = userNames[j];
-  chartParent.append(h3);
-  chartParent.append(canvas);
+
+  userDiv.append(h3);
+  userDiv.append(canvas);
+  chartParent.append(userDiv);
   var ctx = canvas.getContext('2d');
 
   // For a pie chart

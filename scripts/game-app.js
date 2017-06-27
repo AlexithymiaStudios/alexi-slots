@@ -64,12 +64,16 @@ function updateWins(){
   if (currentEmojis[0] === currentEmojis[1] && currentEmojis[0] === currentEmojis[2]) {
     // update jackpots and response in currentUser
     currentUser.jackpots++;
-    response.textContent = 'You hit the Jackpot!';
+    setTimeout(function(){
+      response.textContent = 'You hit the Jackpot!';
+    }, 1600);
   } else if (currentEmojis[0] === currentEmojis[1] ||
           currentEmojis[1] === currentEmojis[2] ||
           currentEmojis[0] === currentEmojis[2] ) {
     currentUser.pairs++;
-    response.textContent = 'You got a pair!';
+    setTimeout(function(){
+      response.textContent = 'You got a pair!';
+    }, 1600);
   } else {
     response.textContent = ' ';
   }

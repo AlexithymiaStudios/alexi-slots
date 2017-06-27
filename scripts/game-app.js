@@ -53,7 +53,6 @@ function getRandomEmojis(){
 
 function renderEmojis(){
   var divs = document.getElementsByClassName('slotWindow');
-  // var parent = document.getElementById('game');
   for (var i = 0; i < divs.length; i++) {
     divs[i].removeChild(divs[i].lastChild); // remove image from div
     var clone = divs[i].cloneNode(true); // clone div

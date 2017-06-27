@@ -158,10 +158,12 @@ canvas {
 .useChart  {
   display: inline;
 }
+
+/******************* OPTIONS STYLES *******************/
+
+
 /******************* GRID STYLES *******************/
 
-
-/* Grid Implementation */
 .row,
 .column {
   box-sizing: border-box;
@@ -181,9 +183,6 @@ canvas {
   position: relative;
   float: left;
 }
-
-
-
 /*one column is 8.33% wide*/
 
 .col-1 {

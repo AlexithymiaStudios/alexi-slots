@@ -10,7 +10,6 @@ function insertNewUser() {
   input.setAttribute('type', 'text');
   input.setAttribute('name', 'userNameSelected');
   input.setAttribute('value', 'Enter your name');
-  // input.setAttribute('pattern', /^[a-zA-Z\-]+$/);
   label.textContent = 'New User';
   form.appendChild(label);
   form.appendChild(input);
@@ -61,32 +60,26 @@ addNewUserButton.addEventListener('click', function(event) {
     var newUser = new User(newUserForm.userNameSelected.value);
     Data.saveUser(newUser);
     console.log(newUserForm.userNameSelected.value);
+    window.location.href = 'index.html';
   };
 });
 
 showPastUsersButton.addEventListener('click', function(event) {
   event.preventDefault();
-  console.log(pastUsersForm.userNameSelected.value);
+  var userSelected = Data.loadUserName(pastUsersForm.userNameSelected.value);
+  if (userSelected !== null ) {
+    Data.saveUser(userSelected);
+  } else {
+    console.warn('Was not able to save selected user');
+  }
 });
 
-
-
 function checkIfValid(formInput) {
-  var validUsername = formInput.value.match(/^[a-zA-Z\-]+$/);
+  var validUsername = formInput.value.match(/^[a-zA-Z]+$/);
   if (validUsername === null){
-    alert("Your first name is not valid. Only characters A-Z, a-z and '-' are  acceptable.");
+    alert('Your first name is not valid. Only characters A-Z and a-z are acceptable.');
     formInput.focus();
     return false;
   };
   return true;
 };
-
-
-
-
-// <button id="startPlaying">Play</button>
-// var playButton = document.getElementById('startPlaying');
-// playButton.addEventListener('click', function(event){
-//   var formShowing = document.getElementById(currentOptionShowing);
-//   console.log(formShowing);
-// });

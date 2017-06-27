@@ -16,10 +16,9 @@ var imageArray = [image1, image2, image3];
 if (Data.loadCurrentUser() === null) {
   //TODO - get persistance
   // load settings page
-  // window.location.href = 'options.html';
-  var currentUser = {userName: 'Quinn', rounds: 0, wins:0};
+  window.location.href = 'options.html';
   // Render username on page
-  renderUserName()
+  renderUserName();
 } else {
   var currentUser = Data.loadCurrentUser(); //TODO - get persistance
   renderUserName();

@@ -101,6 +101,7 @@ button {
   text-align: right;
   margin: 2% 0%;
   float: right;
+  clear:both;
 }
 
 #game div {

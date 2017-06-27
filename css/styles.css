@@ -168,7 +168,16 @@ canvas {
   width: content-box;
   float: left;
 }
-
+.userChart {
+  padding: 20px;
+  border: 1px solid lightgrey;
+  margin: 1% 3.5%;
+}
+#chart h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Roboto Mono', monospace;
+}
 .useChart  {
   display: inline;
 }

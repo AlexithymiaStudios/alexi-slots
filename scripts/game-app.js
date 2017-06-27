@@ -1,16 +1,9 @@
 'use strict';
-
+/************ VARIABLE ************/
 var emojiArray = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
-var image1 = document.getElementById('img1');
-var image2 = document.getElementById('img2');
-var image3 = document.getElementById('img3');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
-var imageArray = [image1, image2, image3];
-
-// TODO: this is a fake function that we're using for testing. Delete before pushing.
-// var currentUser = {username: 'Quinn', rounds: 0, wins:0};
 
 // get data and name
 if (Data.loadCurrentUser() === null) {
@@ -20,7 +13,7 @@ if (Data.loadCurrentUser() === null) {
   // Render username on page
   renderUserName();
 } else {
-  var currentUser = Data.loadCurrentUser(); //TODO - get persistance
+  var currentUser = Data.loadCurrentUser();
   renderUserName();
 }
 
@@ -29,22 +22,20 @@ playButton.addEventListener('click', function(event){
   // picks a random img from emojiArray
   currentEmojis = getRandomEmojis();
 
-
-  // img1.classList.remove('animation');
-
   // update rounds in currentUser
   currentUser.rounds++;
+
   // update rendered image to DOM
   renderEmojis();
+
   // if three img are same
-  var img1 = document.getElementById('img1');
-  img1.classList.add('animation');
-  setTimeout(img1.classList.remove('animation'), 3000);
   updateWins();
+
   // update localStorage with new currentUser
-  Data.saveUser(currentUser); //TODO - get persistance
+  Data.saveUser(currentUser);
+
   // get new data from localStorage
-  Data.loadCurrentUser(); //TODO - get persistance
+  Data.loadCurrentUser();
 });
 
 // Function to get three random emoji images.
@@ -58,9 +49,14 @@ function getRandomEmojis(){
 }
 
 function renderEmojis(){
+  var divs = document.getElementsByClassName('slotWindow');
   for (var i = 0; i < currentEmojis.length; i++) {
-    imageArray[i].setAttribute('src', 'img/' + currentEmojis[i]);
-    imageArray[i].setAttribute('alt', currentEmojis[i]);
+    divs[i].removeChild(divs[i].lastChild);
+    var img = document.createElement('img');
+    img.setAttribute('src', 'img/' + currentEmojis[i]);
+    img.setAttribute('alt', currentEmojis[i]);
+    img.setAttribute('class','animation');
+    divs[i].append(img);
   }
 }
 

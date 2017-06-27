@@ -52,8 +52,6 @@ var showPastUsersButton = document.getElementById('showPastUsers');
 var pastUsersForm = document.getElementById('pastUsers');
 var newUserForm = document.getElementById('newUser');
 
-console.log(newUserForm);
-
 addNewUserButton.addEventListener('click', function(event) {
   event.preventDefault();
   if (checkIfValid(newUserForm.userNameSelected)){

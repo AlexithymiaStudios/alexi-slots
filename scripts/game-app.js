@@ -9,11 +9,8 @@ var userNameSpan = document.getElementById('userName'); // Is this id name okay?
 /*********** MAIN FLOW ***********/
 // get data and name
 if (Data.loadCurrentUser() === null) {
-  //TODO - get persistance
   // load settings page
   window.location.href = 'options.html';
-  // Render username on page
-  renderUserName();
 } else {
   var currentUser = Data.loadCurrentUser(); //TODO - get persistance
   renderUserName();

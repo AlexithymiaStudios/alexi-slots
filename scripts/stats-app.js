@@ -8,6 +8,11 @@ var losses = [];
 var jackpots = [];
 var pairs = [];
 
+// get data and name
+if (Data.loadCurrentUser() === null) {
+  window.location.href = 'options.html';
+}
+
 for (var i in allData){
   userNames.push(allData[i].userName);
   losses.push(allData[i].losses());

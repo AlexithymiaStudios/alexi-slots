@@ -4,8 +4,12 @@ img {
   width:;
 }
 
-#chart {
-  padding: 0 300px;
+.userChart {
+  padding: 0 10%;
+}
+
+.userDiv {
+  padding: 0 50px;
 }
 
 /* Grid Implementation */

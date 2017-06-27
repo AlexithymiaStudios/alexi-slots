@@ -87,28 +87,20 @@ button {
   overflow: hidden;
 }
 
-/*var emojiArray = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];*/
-
-
 @keyframes spinning {
     0%   {
-      background-color: red
       content:url('../img/dancer.png');
       top: -209px;
       filter: blur(10px)
     }
     25%  {
-      background-color: yellow
       content:url('../img/cat.png');
       top: -71px;
       filter: blur(7px)
-
     }
     50%  {
-      background-color: blue
       content:url('../img/alien.png');
       top: 0px;
-      /*filter: blur(0px);*/
       filter: blur(7px)
 
     }
@@ -119,11 +111,9 @@ button {
     }
 
     100% {
-      background-color: black
       content:url('../img/unicorn.png');
       top: 209px;
       filter: blur(7px)
-      /*filter: blur(10px)*/
     }
 }
 
@@ -134,11 +124,10 @@ button {
     100% {background-color: black}
 }
 
-.slotWindow {
+#game .blinking {
   animation-name: blinking;
   animation-iteration-count: 4;
   animation-duration: .4s;
-  /*animation-timing-function: linear;*/
 }
 
 #game .col-1andHalf {

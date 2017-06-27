@@ -4,7 +4,7 @@ body {
   background-color: black;
   margin: 0px;
   padding: 0px;
-  /*width: 1200px;*/
+  width: 1200px;
 }
 
 * {
@@ -74,6 +74,18 @@ article p {
 /******************* OPTION *******************/
 form input {
   color: black;
+  font-style:  'Gloria Hallelujah', cursive;
+}
+
+input {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
 }
 
 form {
@@ -83,11 +95,62 @@ form {
   float:left;
   font-size: 24px;
   text-align: center;
-}
-button {
-  color: black;
+  background-color: gray;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
+form #pastUsers {
+  border: 2px dashed white;
+  width: 200px;
+  height: 200px;
+  float:left;
+  font-size: 24px;
+  text-align: center;
+  background-color: gray;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+form #currentUsers {
+
+}
+
+button {
+  color: black;
+  font-size: 20px;
+
+}
+
+#resetBalanceButton {
+            background-color: gray;
+            opacity: 0.5;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+            outline:none;
+        }
+
+/*width: 10px;
+height: 30px;*/
+
+
+#welcome {
+  font-size: 40px;
+  padding: 30px;
+  font-family: 'Gloria Hallelujah', cursive;
+  /*margin: ;*/
+}
+
+#selectUser {
+  font-family: 'Roboto Mono', monospace;
+}
+
+section p {
+  font-size: 20px;
+  font-family: 'Roboto Mono', monospace;
+}
 /******************* GAME STYLES *******************/
 
 #welcomeMessage {
@@ -172,8 +235,6 @@ canvas {
 .useChart  {
   display: inline;
 }
-
-/******************* OPTIONS STYLES *******************/
 
 
 /******************* GRID STYLES *******************/

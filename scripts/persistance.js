@@ -6,7 +6,6 @@ function User(userName, rounds, wins) {
   this.wins = wins ? wins : 0;
 }
 
-
 var Data = {};
 
 Data.loadCurrentUser = function() {
@@ -29,14 +28,18 @@ Data.saveUser = function(user) {
   localStorage.setItem('users', JSON.stringify(usersToEdit));
 };
 
-Data.loadUser = function(user) {
+Data.loadUser = function(user){
+  return this.loadUserName(user.userName);
+};
+
+Data.loadUserName = function(userName) {
   var usersLoad =  localStorage.getItem('users');
 
   if (usersLoad === null){
     return null;
   } else {
-    localStorage.setItem('currentUser', user.userName);
-    return JSON.parse(usersLoad)[user.userName];
+    localStorage.setItem('currentUser', userName);
+    return JSON.parse(usersLoad)[userName];
   };
 };
 

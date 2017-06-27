@@ -21,7 +21,7 @@ if (Data.loadCurrentUser() === null) {
 // when play button is clicked
 playButton.addEventListener('click', function(event){
   // change the image on button
-  playButton.style.background = 'url(\'img/handleDown.png\')';
+  // playButton.style.background = 'url(\'img/handleDown.png\')';
   // picks a random img from emojiArray
   currentEmojis = getRandomEmojis();
   // update rounds in currentUser
@@ -35,7 +35,7 @@ playButton.addEventListener('click', function(event){
   // get new data from localStorage
   Data.loadCurrentUser();
   // Render new balance
-  renderBalance();
+  setTimeout(renderBalance,1600);
   // check if user is out of money
   currentUser = Data.loadCurrentUser();
   //if balance is 0

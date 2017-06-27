@@ -8,7 +8,9 @@
   </head>
   <body>
     <header>
-      <h1>Emojii-Slots</h1>
+      <div id='title'>
+        <h1>Emojii-Slots</h1>
+      </div>
       <nav class="row">
         <ul>
           <li class="column col-4"><a href="index.html">Game</a></li>
@@ -20,16 +22,16 @@
     <main>
       <article class="row" id="welcomeMessage"><p>Welcome <span id="userName"></span></p></article>
       <article class="row" id="game">
+        <div class="column col-1andHalf"></div>
         <div class="column col-3 slotWindow" ><img src="img/alien.png" alt="Emoji"></div>
-        <div class="column col-1andHalf"></div>
         <div class="column col-3 slotWindow"><img src="img/cat.png" alt="Emoji"></div>
-        <div class="column col-1andHalf"></div>
         <div class="column col-3 slotWindow"><img src="img/dancer.png" alt="Emoji"></div>
+        <article>
+          <button id="playButton">Play</button>
+        </article>
+
       </article>
       <article id="response"></article>
-      <article class="row">
-        <button id="playButton" style="background: url('img/handleUp.png') no-repeat;height:408px;width:121px;border-style:none;">Play</button>
-      </article>
       <article>
         <div><p>Balance: $<span id="balance""></span></p></div>
       </article>

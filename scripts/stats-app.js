@@ -34,7 +34,7 @@ for (var j = 0; j < userNames.length; j++){
     ]
   };
   var userDiv = document.createElement('div');
-  userDiv.setAttribute('class', 'column col-4 userChart');
+  userDiv.setAttribute('class', 'column col-5 userChart');
   var h3 = document.createElement('h3');
   userDiv.append(h3);
   var canvas = document.createElement('canvas');

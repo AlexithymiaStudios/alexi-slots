@@ -22,14 +22,19 @@ main {
 .userDiv {
   padding: 0 50px;
 }
-
-h1 {
-  text-align: center;
-  font-family: 'Slackey', cursive;
+#title {
   background-image: url('../img/vegas-sign.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 80px 60px;
+  background-size: 300px 200px;
+}
+
+#title h1 {
+  color: blue;
+  text-align: center;
+  height: 200px;
+  font-family: 'Slackey', cursive;
+  font-size: 44px;
 }
 /******************* NAVIGATION *******************/
 
@@ -164,6 +169,18 @@ section p {
   overflow: hidden;
 }
 
+#playButton{
+  background: url('../img/handleUp.png') no-repeat;
+  height:408px;
+  width:121px;
+  border-style: none;
+  outline: none;
+}
+
+#playButton:active {
+  background: url('../img/handleDown.png');
+}
+
 @keyframes spinning {
     0%   {
       content:url('../img/dancer.png');
@@ -225,6 +242,10 @@ section p {
   }
 
 /******************* STATS *******************/
+main {
+  min-width: 975px;
+}
+
 canvas {
   min-width:200px;
   min-height: 200px;
@@ -232,6 +253,16 @@ canvas {
   float: left;
 }
 
+.userChart {
+  padding: 20px;
+  border: 5px solid #333333;
+  margin: 1% 3.5%;
+}
+#chart h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Roboto Mono', monospace;
+}
 .useChart  {
   display: inline;
 }

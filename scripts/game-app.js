@@ -53,11 +53,11 @@ function getRandomEmojis(){
 
 function renderEmojis(){
   var divs = document.getElementsByClassName('slotWindow');
-  var parent = document.getElementById('game');
+  // var parent = document.getElementById('game');
   for (var i = 0; i < divs.length; i++) {
     divs[i].removeChild(divs[i].lastChild); // remove image from div
     var clone = divs[i].cloneNode(true); // clone div
-    clone.className += " blinking";
+    clone.className += ' blinking';
     game.replaceChild(clone, divs[i]); // replace div with new clone
     var img = document.createElement('img'); // create new img
     img.setAttribute('src', 'img/' + currentEmojis[i]);

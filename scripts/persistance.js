@@ -1,5 +1,9 @@
 'use strict';
 
+var initialBalance = 25;
+var jackpotWorth = 3;
+var pairWorth = 2;
+
 function User(userName) {
   this.userName = userName;
   this.rounds = 0;
@@ -15,8 +19,18 @@ function convertObjectToUser(object) {
   return user;
 }
 
+User.prototype.resetStats = function(){
+  this.jackpots = 0;
+  this.pairs = 0;
+  this.rounds = 0;
+};
+
+User.prototype.moneyBalance = function() {
+  return (this.pairs * pairWorth + this.jackpots * jackpotWorth ) - this.losses() + initialBalance;
+};
+
 User.prototype.losses = function() {
-  return this.rounds - this.jackpots + this.pairs;
+  return this.rounds - (this.jackpots + this.pairs);
 };
 
 var Data = {};

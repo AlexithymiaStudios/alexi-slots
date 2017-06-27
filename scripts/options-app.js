@@ -9,7 +9,7 @@ function insertNewUser() {
   var input = document.createElement('input');
   input.setAttribute('type', 'text');
   input.setAttribute('name', 'userNameSelected');
-  input.setAttribute('value', 'Enter your name');
+  input.setAttribute('placeholder', 'Enter your name');
   label.textContent = 'New User';
   form.appendChild(label);
   form.appendChild(input);

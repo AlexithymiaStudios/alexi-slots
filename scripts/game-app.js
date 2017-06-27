@@ -67,9 +67,7 @@ function updateWins(){
     setTimeout(function(){
       response.textContent = 'You hit the Jackpot!';
     }, 1600);
-  } else if (currentEmojis[0] === currentEmojis[1] ||
-          currentEmojis[1] === currentEmojis[2] ||
-          currentEmojis[0] === currentEmojis[2] ) {
+  } else if (currentEmojis[0] === currentEmojis[1]) {
     currentUser.pairs++;
     setTimeout(function(){
       response.textContent = 'You got a pair!';

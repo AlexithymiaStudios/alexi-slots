@@ -9,14 +9,12 @@ var userNameSpan = document.getElementById('userName'); // Is this id name okay?
 /*********** MAIN FLOW ***********/
 // get data and name
 if (Data.loadCurrentUser() === null) {
-  //TODO - get persistance
   // load settings page
   window.location.href = 'options.html';
-  // Render username on page
-  renderUserName();
 } else {
-  var currentUser = Data.loadCurrentUser(); //TODO - get persistance
+  var currentUser = Data.loadCurrentUser();
   renderUserName();
+  renderBalance();
 }
 
 /*********** EVENT HANDLING ***********/
@@ -31,9 +29,15 @@ playButton.addEventListener('click', function(event){
   // if three img are same
   updateWins();
   // update localStorage with new currentUser
-  Data.saveUser(currentUser); //TODO - get persistance
+  Data.saveUser(currentUser);
   // get new data from localStorage
-  Data.loadCurrentUser(); //TODO - get persistance
+  Data.loadCurrentUser();
+  // Render new balance
+  renderBalance();
+  // check if user is out of money
+  currentUser = Data.loadCurrentUser();
+  //if balance is 0
+  setTimeout(isOutOfMoney, 2000);
 });
 
 /*********** FUNCTION ***********/
@@ -64,12 +68,14 @@ function updateWins(){
   if (currentEmojis[0] === currentEmojis[1] && currentEmojis[0] === currentEmojis[2]) {
     // update jackpots and response in currentUser
     currentUser.jackpots++;
-    response.textContent = 'You hit the Jackpot!';
-  } else if (currentEmojis[0] === currentEmojis[1] ||
-          currentEmojis[1] === currentEmojis[2] ||
-          currentEmojis[0] === currentEmojis[2] ) {
+    setTimeout(function(){
+      response.textContent = 'You hit the Jackpot!';
+    }, 1600);
+  } else if (currentEmojis[0] === currentEmojis[1]) {
     currentUser.pairs++;
-    response.textContent = 'You got a pair!';
+    setTimeout(function(){
+      response.textContent = 'You got a pair!';
+    }, 1600);
   } else {
     response.textContent = ' ';
   }
@@ -78,4 +84,21 @@ function updateWins(){
 function renderUserName(){
   // update text content of the span
   userNameSpan.textContent = currentUser.userName;
+}
+
+// function to render new balance
+function renderBalance(){
+  // get refernece to span
+  var span = document.getElementById('balance');
+  // update HTML in span
+  span.textContent = currentUser.moneyBalance();
+}
+
+function isOutOfMoney(){
+  var currentUser = Data.loadCurrentUser();
+  //if balance is 0
+  if (currentUser.moneyBalance() < 1) {
+    alert ("You've out of money! Please reset your wallet.");
+    window.location.href = 'options.html';
+  }
 }

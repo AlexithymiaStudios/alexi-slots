@@ -1,5 +1,9 @@
 'use strict';
 
+/************** VARIABLES **************/
+var resetButton = document.getElementById('resetBalanceButton');
+
+
 function insertNewUser() {
   var form = document.createElement('form');
   var label = document.createElement('label');
@@ -84,3 +88,11 @@ function checkIfValid(formInput) {
   };
   return true;
 };
+
+
+// get event listener
+resetButton.addEventListener('click', function(){
+  var currentUser = Data.loadCurrentUser();
+  currentUser.resetStats();
+  Data.saveUser(currentUser);
+});

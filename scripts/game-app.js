@@ -21,7 +21,7 @@ if (Data.loadCurrentUser() === null) {
 // when play button is clicked
 playButton.addEventListener('click', function(event){
   // change the image on button
-  playButton.style.background = 'url(\'img/handleDown.png\')';
+  // playButton.style.background = 'url(\'img/handleDown.png\')';
   // picks a random img from emojiArray
   currentEmojis = getRandomEmojis();
   // update rounds in currentUser

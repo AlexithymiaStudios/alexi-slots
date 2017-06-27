@@ -34,6 +34,10 @@ playButton.addEventListener('click', function(event){
   Data.loadCurrentUser();
   // Render new balance
   renderBalance();
+  // check if user is out of money
+  currentUser = Data.loadCurrentUser();
+  //if balance is 0
+  setTimeout(isOutOfMoney, 2000);
 });
 
 /*********** FUNCTION ***********/
@@ -88,4 +92,13 @@ function renderBalance(){
   var span = document.getElementById('balance');
   // update HTML in span
   span.textContent = currentUser.moneyBalance();
+}
+
+function isOutOfMoney(){
+  var currentUser = Data.loadCurrentUser();
+  //if balance is 0
+  if (currentUser.moneyBalance() < 1) {
+    alert ("You've out of money! Please reset your wallet.");
+    window.location.href = 'options.html';
+  }
 }

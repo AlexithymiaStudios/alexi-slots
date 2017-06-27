@@ -69,8 +69,9 @@ showPastUsersButton.addEventListener('click', function(event) {
   var userSelected = Data.loadUserName(pastUsersForm.userNameSelected.value);
   if (userSelected !== null ) {
     Data.saveUser(userSelected);
+    window.location.href = 'index.html';
   } else {
-    console.warn('Was not able to save selected user');
+    console.warn('Was not able to load selected user');
   }
 });
 

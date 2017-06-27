@@ -68,7 +68,7 @@ nav li {
 
 #game .animation {
   animation-name: spinning;
-  animation-iteration-count: 20;
+  animation-iteration-count: 8;
   animation-duration: .1s;
   animation-timing-function: linear;
   }

@@ -1,5 +1,5 @@
 'use strict';
-/************ VARIABLE ************/
+
 var emojiArray = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
@@ -13,29 +13,28 @@ if (Data.loadCurrentUser() === null) {
   // Render username on page
   renderUserName();
 } else {
-  var currentUser = Data.loadCurrentUser();
+  var currentUser = Data.loadCurrentUser(); //TODO - get persistance
   renderUserName();
 }
 
 // when play button is clicked
 playButton.addEventListener('click', function(event){
+  // Start animation
+  imageArray[i].setAttribute('id', 'animationGo');
   // picks a random img from emojiArray
   currentEmojis = getRandomEmojis();
-
   // update rounds in currentUser
   currentUser.rounds++;
-
   // update rendered image to DOM
   renderEmojis();
-
+  // Finish animation
+  imageArray[i].setAttribute('id', 'finished');
   // if three img are same
   updateWins();
-
   // update localStorage with new currentUser
-  Data.saveUser(currentUser);
-
+  Data.saveUser(currentUser); //TODO - get persistance
   // get new data from localStorage
-  Data.loadCurrentUser();
+  Data.loadCurrentUser(); //TODO - get persistance
 });
 
 // Function to get three random emoji images.
@@ -49,23 +48,23 @@ function getRandomEmojis(){
 }
 
 function renderEmojis(){
-  var divs = document.getElementsByClassName('slotWindow');
   for (var i = 0; i < currentEmojis.length; i++) {
-    divs[i].removeChild(divs[i].lastChild);
-    var img = document.createElement('img');
-    img.setAttribute('src', 'img/' + currentEmojis[i]);
-    img.setAttribute('alt', currentEmojis[i]);
-    img.setAttribute('class','animation');
-    divs[i].append(img);
+    imageArray[i].setAttribute('src', 'img/' + currentEmojis[i]);
+    imageArray[i].setAttribute('alt', currentEmojis[i]);
   }
 }
 
 function updateWins(){
   var response = document.getElementById('response');
   if (currentEmojis[0] === currentEmojis[1] && currentEmojis[0] === currentEmojis[2]) {
-    // update wins and response in currentUser
-    currentUser.wins++;
-    response.textContent = 'You win!';
+    // update jackpots and response in currentUser
+    currentUser.jackpots++;
+    response.textContent = 'You hit the Jackpot!';
+  } else if (currentEmojis[0] === currentEmojis[1] ||
+          currentEmojis[1] === currentEmojis[2] ||
+          currentEmojis[0] === currentEmojis[2] ) {
+    currentUser.pairs++;
+    response.textContent = 'You got a pair!';
   } else {
     response.textContent = ' ';
   }

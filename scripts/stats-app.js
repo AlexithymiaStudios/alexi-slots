@@ -4,25 +4,28 @@ var allData = Data.getAllUsers();
 var chartParent = document.getElementById('chart');
 
 var userNames = [];
-var rounds = [];
-var wins = [];
+var losses = [];
+var jackpots = [];
+var pairs = [];
 
 for (var i in allData){
   userNames.push(allData[i].userName);
-  rounds.push(allData[i].rounds);
-  wins.push(allData[i].wins);
+  losses.push(allData[i].losses());
+  jackpots.push(allData[i].jackpots);
+  pairs.push(allData[i].pairs);
 }
 
 for (var j = 0; j < userNames.length; j++){
 
   var data = {
     datasets: [{
-      data: [rounds[j],wins[j]],
-      backgroundColor: ['red', 'blue']
+      data: [losses[j],jackpots[j], pairs[j]],
+      backgroundColor: ['red', 'blue', 'green']
     }],
     labels: [
-      'Round',
-      'Wins'
+      'Losses',
+      'Jackpots',
+      'Pairs'
     ]
   };
   var userDiv = document.createElement('div');

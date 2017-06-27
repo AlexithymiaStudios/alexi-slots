@@ -1,10 +1,37 @@
 'use strict';
 
-function User(userName, rounds, wins) {
+var initialBalance = 25;
+var jackpotWorth = 3;
+var pairWorth = 2;
+
+function User(userName) {
   this.userName = userName;
-  this.rounds = rounds ? rounds : 0;
-  this.wins = wins ? wins : 0;
+  this.rounds = 0;
+  this.jackpots = 0;
+  this.pairs = 0;
 }
+
+function convertObjectToUser(object) {
+  var user = new User(object.userName);
+  user.rounds = object.rounds;
+  user.jackpots = object.jackpots;
+  user.pairs = object.pairs;
+  return user;
+}
+
+User.prototype.resetStats = function(){
+  this.jackpots = 0;
+  this.pairs = 0;
+  this.rounds = 0;
+};
+
+User.prototype.moneyBalance = function() {
+  return (this.pairs * pairWorth + this.jackpots * jackpotWorth ) - this.losses() + initialBalance;
+};
+
+User.prototype.losses = function() {
+  return this.rounds - (this.jackpots + this.pairs);
+};
 
 var Data = {};
 
@@ -14,7 +41,7 @@ Data.loadCurrentUser = function() {
   if (currentUserLoad === null || usersLoad === null){
     return null;
   } else {
-    return JSON.parse(usersLoad) [currentUserLoad];
+    return convertObjectToUser(JSON.parse(usersLoad) [currentUserLoad]);
   };
 };
 
@@ -39,7 +66,7 @@ Data.loadUserName = function(userName) {
     return null;
   } else {
     localStorage.setItem('currentUser', userName);
-    return JSON.parse(usersLoad)[userName];
+    return convertObjectToUser(JSON.parse(usersLoad)[userName]);
   };
 };
 
@@ -50,7 +77,7 @@ Data.getAllUsers = function() {
   } else {
     var temp = [];
     for (var each in allUsersLoad) {
-      temp.push(allUsersLoad[each]);
+      temp.push(convertObjectToUser(allUsersLoad[each]));
     }
     return temp;
   }

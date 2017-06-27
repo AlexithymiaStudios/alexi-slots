@@ -27,14 +27,16 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 300px 200px;
+  height: 200px;
+  margin-bottom: 25px;
 }
 
-#title h1 {
+h1 {
+  padding-top: 50px;
   color: blue;
   text-align: center;
-  height: 200px;
   font-family: 'Slackey', cursive;
-  font-size: 44px;
+  font-size: 38px;
 }
 /******************* NAVIGATION *******************/
 
@@ -159,8 +161,9 @@ section p {
 /******************* GAME STYLES *******************/
 
 #welcomeMessage {
-  text-align: center;
+  text-align: right;
   margin: 2% 0%;
+  float: right;
 }
 
 #game div {

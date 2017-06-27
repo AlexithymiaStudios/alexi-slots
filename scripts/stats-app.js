@@ -6,23 +6,26 @@ var chartParent = document.getElementById('chart');
 var userNames = [];
 var rounds = [];
 var jackpots = [];
+var pairs = [];
 
 for (var i in allData){
   userNames.push(allData[i].userName);
   rounds.push(allData[i].rounds);
   jackpots.push(allData[i].jackpots);
+  pairs.push(allData[i].pairs);
 }
 
 for (var j = 0; j < userNames.length; j++){
 
   var data = {
     datasets: [{
-      data: [rounds[j],jackpots[j]],
-      backgroundColor: ['red', 'blue']
+      data: [rounds[j],jackpots[j], pairs[j]],
+      backgroundColor: ['red', 'blue', 'green']
     }],
     labels: [
-      'Round',
-      'Wins'
+      'Rounds',
+      'Jackpots',
+      'Pairs'
     ]
   };
   var userDiv = document.createElement('div');

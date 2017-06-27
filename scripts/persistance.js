@@ -4,6 +4,7 @@ function User(userName) {
   this.userName = userName;
   this.rounds = 0;
   this.jackpots = 0;
+  this.pairs = 0;
 }
 
 var Data = {};

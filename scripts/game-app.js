@@ -26,17 +26,20 @@ if (Data.loadCurrentUser() === null) {
 
 // when play button is clicked
 playButton.addEventListener('click', function(event){
-  // Start animation
-  imageArray[i].setAttribute('id', 'animationGo');
   // picks a random img from emojiArray
   currentEmojis = getRandomEmojis();
+
+
+  // img1.classList.remove('animation');
+
   // update rounds in currentUser
   currentUser.rounds++;
   // update rendered image to DOM
   renderEmojis();
-  // Finish animation
-  imageArray[i].setAttribute('id', 'finished');
   // if three img are same
+  var img1 = document.getElementById('img1');
+  img1.classList.add('animation');
+  setTimeout(img1.classList.remove('animation'), 3000);
   updateWins();
   // update localStorage with new currentUser
   Data.saveUser(currentUser); //TODO - get persistance

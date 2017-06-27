@@ -58,9 +58,11 @@ function renderEmojis(){
 }
 
 function updateWins(){
+  var response = document.getElementById('response');
   if (currentEmojis[0] === currentEmojis[1] && currentEmojis[0] === currentEmojis[2]) {
-    // update wins in currentUser
+    // update wins and response in currentUser
     currentUser.wins++;
+    response.textContent = 'You win!';
   }
 }
 

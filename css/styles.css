@@ -29,11 +29,33 @@ nav {
   text-align: center;
   list-style: none;
   background-color: red;
-  padding: 5%;
+  padding: 3%;
 }
 nav li {
   list-style-type: none;
+  font-size: 30px;
+  font-family: 'Roboto Mono', monospace;
 }
+
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover {
+     color: black;
+     text-decoration: none;
+     cursor:pointer;
+}
+
+/******************* WELCOME MESSAGE *******************/
+article p {
+  font-size: 50px;
+  font-family: 'Gloria Hallelujah', cursive;
+  border: 0;
+  padding: 0;
+}
+
 
 /******************* OPTION *******************/
 form input {

@@ -179,15 +179,20 @@ button {
   }
 
 /******************* STATS *******************/
+main {
+  min-width: 975px;
+}
+
 canvas {
   min-width:200px;
   min-height: 200px;
   width: content-box;
   float: left;
 }
+
 .userChart {
   padding: 20px;
-  border: 1px solid lightgrey;
+  border: 5px solid #333333;
   margin: 1% 3.5%;
 }
 #chart h3 {

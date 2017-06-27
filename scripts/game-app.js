@@ -35,7 +35,7 @@ playButton.addEventListener('click', function(event){
   // get new data from localStorage
   Data.loadCurrentUser();
   // Render new balance
-  renderBalance();
+  setTimeout(renderBalance,1600);
   // check if user is out of money
   currentUser = Data.loadCurrentUser();
   //if balance is 0

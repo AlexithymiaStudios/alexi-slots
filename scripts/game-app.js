@@ -3,11 +3,7 @@
 var emojiArray = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
-var image1 = document.getElementById('img1');
-var image2 = document.getElementById('img2');
-var image3 = document.getElementById('img3');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
-var imageArray = [image1, image2, image3];
 
 // get data and name
 if (Data.loadCurrentUser() === null) {
@@ -31,9 +27,6 @@ playButton.addEventListener('click', function(event){
 
   // update rendered image to DOM
   renderEmojis();
-  // var img1 = document.getElementById('img1');
-  // img1.classList.add('animation');
-  // setTimeout(img1.classList.remove('animation'), 3000);
 
   // if three img are same
   updateWins();

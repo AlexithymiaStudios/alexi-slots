@@ -39,7 +39,7 @@ Data.loadUser = function(user) {
     return JSON.parse(usersLoad)[user.userName];
   };
 };
-creat
+// creat
 
 Data.getAllUsers = function() {
   var allUsersLoad = JSON.parse(localStorage.getItem('users'));

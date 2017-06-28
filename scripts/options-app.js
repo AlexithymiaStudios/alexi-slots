@@ -4,8 +4,11 @@
 var resetButton = document.getElementById('resetBalanceButton');
 
 /*********** SETUP ***********/
-insertPastUsers();
-insertNewUser();
+function setup(){
+  insertPastUsers();
+  insertNewUser();
+}
+setup();
 
 /*********** ADDITIONAL VARIABLES ***********/
 var addNewUserButton = document.getElementById('addNewUser');

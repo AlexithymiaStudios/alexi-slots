@@ -43,7 +43,7 @@ playButton.addEventListener('click', function(event){
   // check if user is out of money
   currentUser = Data.loadCurrentUser();
   //if balance is 0
-  setTimeout(isOutOfMoney, 2000);
+  setTimeout(isOutOfMoney, 2050);
   // turn button back on
 });
 

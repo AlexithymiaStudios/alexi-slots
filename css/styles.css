@@ -271,7 +271,7 @@ p {
   background: url('../img/starsrain.gif');
   background-size: 100%;
   transform: scale(2);
-  filter: FlipH;
+  background-size: cover;
 }
 
 .pairBackground {

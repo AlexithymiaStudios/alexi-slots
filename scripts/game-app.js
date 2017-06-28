@@ -58,12 +58,12 @@ function renderEmojis(){
   for (var i = 0; i < divs.length; i++) {
     divs[i].removeChild(divs[i].lastChild); // remove image from div
     var clone = divs[i].cloneNode(true); // clone div
-    clone.className += ' blinking';
+    clone.className += ' blinking' + i;
     game.replaceChild(clone, divs[i]); // replace div with new clone
     var img = document.createElement('img'); // create new img
     img.setAttribute('src', 'img/' + currentEmojis[i]);
     img.setAttribute('alt', currentEmojis[i]);
-    img.setAttribute('class','animation');
+    img.setAttribute('class','animation' + i);
     clone.append(img); //append img to new clone
   }
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 var initialBalance = 25;
-var jackpotWorth = 3;
+var jackpotWorth = 5;
 var pairWorth = 2;
 
 function User(userName) {
@@ -9,6 +9,7 @@ function User(userName) {
   this.rounds = 0;
   this.jackpots = 0;
   this.pairs = 0;
+  this.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
 }
 
 function convertObjectToUser(object) {
@@ -16,6 +17,7 @@ function convertObjectToUser(object) {
   user.rounds = object.rounds;
   user.jackpots = object.jackpots;
   user.pairs = object.pairs;
+  user.slots = object.slots;
   return user;
 }
 

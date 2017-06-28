@@ -245,6 +245,33 @@ p {
   background: url('../img/handleDown.png');
 }
 
+#response {
+  width: 900px;
+  height: 300px;
+  margin-top: -180px;
+  margin-left: 19%;
+}
+
+.jackpotBigBG {
+  background: url('../img/jackpotbg-noborder.png');
+  background-size: 100%;
+}
+
+
+.jackpotBackground {
+  background: url('../img/starsrain.gif');
+  background-size: 100%;
+  transform: scale(2);
+  filter: FlipH;
+}
+
+.pairBackground {
+  background: url('../img/moneyrain.gif');
+  background-size: 100%;
+  transform: scale(2);
+}
+
+
 @keyframes spinning0 {
     0%   {
       content:url('../img/dancer.png');

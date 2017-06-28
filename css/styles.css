@@ -14,13 +14,14 @@ main {
   margin: 0% 5%;
 }
 
-.userChart {
-  padding: 0 10%;
+article p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  border: 0;
+  padding: 0;
 }
 
-.userDiv {
-  padding: 0 50px;
-}
+/******************* HEADER *******************/
 
 #title {
   background-image: url('../img/vegas-sign.png');
@@ -70,48 +71,7 @@ li a:hover {
      cursor:pointer;
 }
 
-/******************* WELCOME MESSAGE *******************/
-article p {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 20px;
-  border: 0;
-  padding: 0;
-}
-
-
-/******************* OPTION *******************/
-
-form input {
-  color: black;
-  /*font-family:  'Gloria Hallelujah', cursive;*/
-}
-
-input {
-    margin: 5%;
-    border:2px solid #ccc;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    font-size: 20px;
-    font-family: 'Roboto Mono', monospace;
-    padding-left: 5px;
-
-}
-
-select {
-    font-size: 20px;
-    color: black;
-      font-family: 'Roboto Mono', monospace;
-}
-
-option {
-    font-size: 20px;
-    color: black;
-      font-family: 'Roboto Mono', monospace;
-}
-
-input[type=text]:focus {
-    border-color:#333;
-}
+/******************* OPTIONS *******************/
 
 form {
   border: 6px dotted yellow;
@@ -126,9 +86,44 @@ form {
   margin: 2%
 }
 
+input {
+  color: black;
+  margin: 5%;
+  border:2px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Roboto Mono', monospace;
+  padding-left: 5px;
+}
+
+select {
+  font-size: 20px;
+  color: black;
+  font-family: 'Roboto Mono', monospace;
+}
+
+option {
+  font-size: 20px;
+  color: black;
+  font-family: 'Roboto Mono', monospace;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+#addNewUser {
+  margin: 5%;
+}
+
 #newUser{
   float: left;
   margin-left: 11%
+}
+
+#showPastUsers {
+  margin: 5%;
 }
 
 #pastUsers{
@@ -136,7 +131,7 @@ form {
   margin-right: 11%
 }
 
-button {
+#optionMain button {
   color: white;
   font-size: 20px;
   font-family: 'Roboto Mono', monospace;
@@ -156,12 +151,20 @@ button {
   text-shadow:0px 1px 0px #283966;
 }
 
-#addNewUser {
-  margin: 5%;
+#optionMain button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+	background-color:#476e9e;
 }
 
-#showPastUsers {
-  margin: 5%;
+#optionMain button:active {
+	position:relative;
+	top:1px;
 }
 
 .right {
@@ -173,30 +176,22 @@ button {
   margin-bottom: 5%;
 }
 
+#instructions {
+  border: 6px dotted yellow;
+  margin: auto 15%;
+  margin-bottom: 4%;
+  padding: 2%;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#instructions li {
+  list-style-type: none;
+  text-align: left;
+}
+
 #resetBalanceButton {
     margin: 2% 0%;
-}
-
-button:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
-	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
-	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
-	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
-	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
-	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
-	background-color:#476e9e;
-}
-
-button:active {
-    	position:relative;
-    	top:1px;
-    }
-
-#welcome {
-  font-size: 40px;
-  font-family: 'Gloria Hallelujah', cursive;
-  text-align: center;
 }
 
 #selectUser {
@@ -426,6 +421,11 @@ canvas {
   padding: 20px;
   border: 6px dotted yellow;
   margin: 1% 3.5%;
+  display: inline;
+}
+
+.userDiv {
+  padding: 0 50px;
 }
 
 #chart h3 {
@@ -433,11 +433,6 @@ canvas {
   text-transform: uppercase;
   font-family: 'Roboto Mono', monospace;
 }
-
-.useChart  {
-  display: inline;
-}
-
 
 /******************* GRID STYLES *******************/
 

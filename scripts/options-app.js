@@ -3,6 +3,17 @@
 /************** VARIABLES **************/
 var resetButton = document.getElementById('resetBalanceButton');
 
+/************** SETUP **************/
+insertPastUsers();
+insertNewUser();
+
+/************** ADDITIONAL VARIABLES **************/
+var addNewUserButton = document.getElementById('addNewUser');
+var showPastUsersButton = document.getElementById('showPastUsers');
+var pastUsersForm = document.getElementById('pastUsers');
+var newUserForm = document.getElementById('newUser');
+
+/************** FUNCTIONS **************/
 function insertNewUser() {
   var form = document.createElement('form');
   var label = document.createElement('label');
@@ -47,16 +58,17 @@ function insertPastUsers() {
   selectUser.appendChild(form);
 };
 
-insertPastUsers();
-insertNewUser();
+function checkIfValid(formInput) {
+  var validUsername = formInput.value.match(/^[a-zA-Z]+$/);
+  if (validUsername === null){
+    alert('Your first name is not valid. Only characters A-Z and a-z are acceptable.');
+    formInput.focus();
+    return false;
+  };
+  return true;
+};
 
-var addNewUserButton = document.getElementById('addNewUser');
-var showPastUsersButton = document.getElementById('showPastUsers');
-var pastUsersForm = document.getElementById('pastUsers');
-var newUserForm = document.getElementById('newUser');
-
-console.log(newUserForm);
-
+/************** EVENT LISTENERS **************/
 addNewUserButton.addEventListener('click', function(event) {
   event.preventDefault();
   if (checkIfValid(newUserForm.userNameSelected)){
@@ -78,18 +90,6 @@ showPastUsersButton.addEventListener('click', function(event) {
   }
 });
 
-function checkIfValid(formInput) {
-  var validUsername = formInput.value.match(/^[a-zA-Z]+$/);
-  if (validUsername === null){
-    alert('Your first name is not valid. Only characters A-Z and a-z are acceptable.');
-    formInput.focus();
-    return false;
-  };
-  return true;
-};
-
-
-// get event listener
 resetButton.addEventListener('click', function(){
   var currentUser = Data.loadCurrentUser();
   currentUser.resetStats();

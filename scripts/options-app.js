@@ -1,19 +1,22 @@
 'use strict';
 
-/************** VARIABLES **************/
+/*********** VARIABLE ***********/
 var resetButton = document.getElementById('resetBalanceButton');
 
-/************** SETUP **************/
-insertPastUsers();
-insertNewUser();
+/*********** SETUP ***********/
+function setup(){
+  insertPastUsers();
+  insertNewUser();
+}
+setup();
 
-/************** ADDITIONAL VARIABLES **************/
+/*********** ADDITIONAL VARIABLES ***********/
 var addNewUserButton = document.getElementById('addNewUser');
 var showPastUsersButton = document.getElementById('showPastUsers');
 var pastUsersForm = document.getElementById('pastUsers');
 var newUserForm = document.getElementById('newUser');
 
-/************** FUNCTIONS **************/
+/*********** FUNCTIONS ***********/
 function insertNewUser() {
   var form = document.createElement('form');
   var label = document.createElement('label');
@@ -68,7 +71,7 @@ function checkIfValid(formInput) {
   return true;
 };
 
-/************** EVENT LISTENERS **************/
+/*********** EVENT LISTENERS ***********/
 addNewUserButton.addEventListener('click', function(event) {
   event.preventDefault();
   if (checkIfValid(newUserForm.userNameSelected)){

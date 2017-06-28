@@ -1,7 +1,7 @@
 'use strict';
 
 /*********** VARIABLE ***********/
-var emojiArray = ['alien.png','cat.png', 'dancer.png','dog.png','poop.png','unicorn.png', 'dancingBanana.gif'];
+var emojiArray = ['alien.png','cat.png', 'dancer.png','dog.png','poop.png','unicorn.png'];
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
@@ -48,7 +48,7 @@ playButton.addEventListener('click', function(){
   // turn button back on
 });
 
-/*********** FUNCTION ***********/
+/*********** FUNCTIONS ***********/
 // Function to get three random emoji images.
 function getRandomEmojis(){
   var threeEmojis = [];

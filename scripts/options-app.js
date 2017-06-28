@@ -127,5 +127,7 @@ difficultySelection.onchange = function () {
   } if ('hard' === value) {
     currentUser.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
   }
+  console.log(value);
+  console.log(currentUser);
   Data.saveUser(currentUser);
 };

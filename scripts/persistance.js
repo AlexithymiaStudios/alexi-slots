@@ -14,17 +14,6 @@ function User(userName) {
   this.pairs = 0;
   this.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
 }
-
-
-function convertObjectToUser(object) {
-  var user = new User(object.userName);
-  user.rounds = object.rounds;
-  user.jackpots = object.jackpots;
-  user.pairs = object.pairs;
-  user.slots = object.slots;
-  return user;
-}
-
 /*********** USER METHODS ***********/
 User.prototype.resetStats = function(){
   this.jackpots = 0;
@@ -97,5 +86,6 @@ function convertObjectToUser(object) {
   user.rounds = object.rounds;
   user.jackpots = object.jackpots;
   user.pairs = object.pairs;
+  user.slots = object.slots;
   return user;
 }

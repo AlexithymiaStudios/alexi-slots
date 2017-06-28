@@ -86,7 +86,7 @@ article p {
 /******************* OPTION *******************/
 form input {
   color: black;
-  font-style:  'Gloria Hallelujah', cursive;
+  /*font-family:  'Gloria Hallelujah', cursive;*/
 }
 
 input {
@@ -94,6 +94,13 @@ input {
     border:2px solid #ccc;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+
+}
+
+select {
+    font-size: 20px;
 }
 
 input[type=text]:focus {
@@ -101,31 +108,18 @@ input[type=text]:focus {
 }
 
 form {
-  border: 5px dashed yellow;
-  width: 200px;
-  height: 200px;
-  float:left;
-  font-size: 24px;
-  text-align: center;
-  background-color: gray;
-  padding: 20px;
-  margin-bottom: 20px;
+border: 5px dashed yellow;
+width: 250px;
+height: 200px;
+float:left;
+font-size: 24px;
+text-align: center;
+background-color: blue;
+padding: 20px;
+margin-bottom: 20px;
+margin-left: 50px;
 }
 
-#pastUsers form {
-  border: 2px dashed yellow;
-  width: 200px;
-  height: 200px;
-  float:left;
-  font-size: 24px;
-  text-align: center;
-  background-color: gray;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-
-}
 form #currentUsers {
 
 }
@@ -133,9 +127,9 @@ form #currentUsers {
 button {
   color: black;
   font-size: 20px;
+  font-family: 'Roboto Mono', monospace;
 
 }
-
 
 #resetBalanceButton {
     -moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
@@ -183,7 +177,6 @@ button {
   font-size: 40px;
   padding: 30px;
   font-family: 'Gloria Hallelujah', cursive;
-  /*margin: ;*/
 }
 
 #selectUser {
@@ -411,11 +404,13 @@ canvas {
   border: 5px solid #333333;
   margin: 1% 3.5%;
 }
+
 #chart h3 {
   text-align: center;
   text-transform: uppercase;
   font-family: 'Roboto Mono', monospace;
 }
+
 .useChart  {
   display: inline;
 }

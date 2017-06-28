@@ -22,6 +22,7 @@ main {
 .userDiv {
   padding: 0 50px;
 }
+
 #title {
   background-image: url('../img/vegas-sign.png');
   background-repeat: no-repeat;
@@ -96,7 +97,7 @@ input[type=text]:focus {
 }
 
 form {
-  border: 2px dashed white;
+  border: 5px dashed yellow;
   width: 200px;
   height: 200px;
   float:left;
@@ -107,8 +108,8 @@ form {
   margin-bottom: 20px;
 }
 
-form #pastUsers {
-  border: 2px dashed white;
+#pastUsers form {
+  border: 2px dashed yellow;
   width: 200px;
   height: 200px;
   float:left;
@@ -119,6 +120,8 @@ form #pastUsers {
   margin-bottom: 20px;
 }
 
+
+}
 form #currentUsers {
 
 }
@@ -129,19 +132,48 @@ button {
 
 }
 
+
 #resetBalanceButton {
-            background-color: gray;
-            opacity: 0.5;
-            background-repeat:no-repeat;
-            border: none;
-            cursor:pointer;
-            overflow: hidden;
-            outline:none;
-        }
+    -moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+    -webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1F3A93), color-stop(1, #2574A9));
+  	background:-moz-linear-gradient(top, #1F3A93 5%, #2574A9 100%);
+  	background:-webkit-linear-gradient(top, #1F3A93 5%, #2574A9 100%);
+  	background:-o-linear-gradient(top, #1F3A93 5%, #2574A9 100%);
+  	background:-ms-linear-gradient(top, #1F3A93 5%, #2574A9 100%);
+  	background:linear-gradient(to bottom, #1F3A93 5%, #2574A9 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1F3A93', endColorstr='#2574A9',GradientType=0);
+  	background-color:#1F3A93;
+  	-moz-border-radius:10px;
+  	-webkit-border-radius:10px;
+  	border-radius:10px;
+  	border:none;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:19px;
+  	padding:12px 37px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #283966;
+  }
 
-/*width: 10px;
-height: 30px;*/
+#resetBalanceButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+	background-color:#476e9e;
+}
 
+#resetBalanceButton:active {
+    	position:relative;
+    	top:1px;
+    }
 
 #welcome {
   font-size: 40px;

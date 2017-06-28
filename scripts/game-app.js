@@ -1,8 +1,7 @@
 'use strict';
 
 /*********** VARIABLE ***********/
-var emojiArray = ['alien.png','cat.png'];
-// 'dancer.png','dog.png','poop.png','unicorn.png'
+var emojiArray = ['alien.png','cat.png', 'dancer.png','dog.png','poop.png','unicorn.png', 'dancingBanana.gif'];
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?

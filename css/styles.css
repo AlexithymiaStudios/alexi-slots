@@ -266,9 +266,12 @@ p {
   background-size: 100%;
 }
 
-
 .jackpotBackground {
   background: url('../img/starsrain.gif');
+  background-size: contain;
+}
+
+.jackpotZoom {
   background-size: 100%;
   transform: scale(2);
   filter: FlipH;
@@ -276,10 +279,13 @@ p {
 
 .pairBackground {
   background: url('../img/moneyrain.gif');
-  background-size: 100%;
-  transform: scale(2);
+  background-size: contain;
 }
 
+.pairZoom {
+  transform: scale(2);
+  background-size: 100%;
+}
 
 @keyframes spinning0 {
     0%   {

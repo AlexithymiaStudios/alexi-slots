@@ -1,9 +1,12 @@
 'use strict';
 
+/*********** VARIABLES ***********/
 var initialBalance = 25;
 var jackpotWorth = 5;
 var pairWorth = 2;
+var Data = {};
 
+/*********** USER CONSTRUCTOR ***********/
 function User(userName) {
   this.userName = userName;
   this.rounds = 0;
@@ -11,6 +14,7 @@ function User(userName) {
   this.pairs = 0;
   this.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
 }
+
 
 function convertObjectToUser(object) {
   var user = new User(object.userName);
@@ -21,6 +25,7 @@ function convertObjectToUser(object) {
   return user;
 }
 
+/*********** USER METHODS ***********/
 User.prototype.resetStats = function(){
   this.jackpots = 0;
   this.pairs = 0;
@@ -35,7 +40,7 @@ User.prototype.losses = function() {
   return this.rounds - (this.jackpots + this.pairs);
 };
 
-var Data = {};
+/*********** DATA METHODS ***********/
 
 Data.loadCurrentUser = function() {
   var currentUserLoad =  localStorage.getItem('currentUser');
@@ -84,3 +89,13 @@ Data.getAllUsers = function() {
     return temp;
   }
 };
+
+/*********** HELPER FUNCTIONS ***********/
+
+function convertObjectToUser(object) {
+  var user = new User(object.userName);
+  user.rounds = object.rounds;
+  user.jackpots = object.jackpots;
+  user.pairs = object.pairs;
+  return user;
+}

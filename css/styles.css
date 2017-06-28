@@ -1,3 +1,4 @@
+
 /******************* GENERAL STYLES *******************/
 
 body {
@@ -84,6 +85,10 @@ form {
   padding: 30px;
   padding-bottom: 0px;
   margin: 2%
+}
+
+#difficultyLevel {
+  border: none;
 }
 
 input {

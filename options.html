@@ -26,9 +26,17 @@
         <div id = "selectUser">
         </div>
       </section>
-      <section class="right">
-        <p> Resetting your balance will erase all of your user stats and set your balance beck to the default ($25).</p>
+      <section class="right" id="currentUserSettings">
+        <form id='difficultyLevel'>
+          <label>Current User Settings</label>
+          <select id='difficultySelection'>
+            <option value="Hard">hard</option>
+            <option value="Medium">medium</option>
+            <option value="Easy">easy</option>
+          </select>
+      </form>
         <button id="resetBalanceButton">Reset Balance</button>
+        <p> Resetting your balance will erase all of your user stats and set your balance beck to the default ($25).</p>
       </section>
       <section id="instructions">
         <h3>Instructions</h3>
@@ -40,6 +48,9 @@
           <li>Select a player above or create a new one!</li>
           <li>See the stats page to see statistic for all players.</li>
         </ul>
+      </section>
+      <section>
+
       </section>
     </main>
   </body>

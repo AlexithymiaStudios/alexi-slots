@@ -7,6 +7,7 @@ var currentEmojis = [];
 var playButton = document.getElementById('playButton');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
 var game = document.getElementById('game');
+var wild = 'wildcard.gif';
 
 /*********** MAIN FLOW ***********/
 // get data and name
@@ -79,7 +80,18 @@ function renderEmojis(){
 
 function updateWins(){
   var response = document.getElementById('response');
-  if (currentEmojis[0] === currentEmojis[1] && currentEmojis[0] === currentEmojis[2]) {
+  var left = currentEmojis[0];
+  var mid = currentEmojis[1];
+  var right = currentEmojis[2];
+  if (
+    left === mid && left === right ||
+    left === wild && mid === right ||
+    mid === wild && left === right ||
+    right === wild && left === mid ||
+    left === wild && mid === wild ||
+    mid === wild && right === wild ||
+    left === wild && right === wild
+    ) {
     // update jackpots and response in currentUser
     currentUser.jackpots++;
     setTimeout(function(){
@@ -87,7 +99,12 @@ function updateWins(){
       winningDivAnimations('jackpotBackground');
       winningImgAnimations('jackpotZoom');
     }, 1600);
-  } else if (currentEmojis[0] === currentEmojis[1]) {
+  } else if (
+    left === mid ||
+    left === wild ||
+    mid === wild
+    )
+     {
     currentUser.pairs++;
     setTimeout(function(){
       winningDivAnimations('pairBackground');

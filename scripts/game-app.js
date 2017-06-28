@@ -49,7 +49,7 @@ playButton.addEventListener('click', function(){
   // turn button back on
 });
 
-/*********** FUNCTION ***********/
+/*********** FUNCTIONS ***********/
 // Function to get three random emoji images.
 function getRandomEmojis(){
   var threeEmojis = [];

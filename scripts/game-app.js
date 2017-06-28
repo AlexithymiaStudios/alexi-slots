@@ -23,7 +23,7 @@ if (Data.loadCurrentUser() === null) {
 
 /*********** EVENT HANDLING ***********/
 // when play button is clicked
-playButton.addEventListener('click', function(event){
+playButton.addEventListener('click', function(){
   // add disabled property to button so it can't be clicked during animation
   playButton.disabled = true;
   // remove animation backgrounds

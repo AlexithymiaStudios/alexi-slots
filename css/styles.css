@@ -1,7 +1,7 @@
 /******************* GENERAL STYLES *******************/
 
 body {
-  background-color: black;
+  background: radial-gradient(ellipse at center, rgba(54,54,54,1) 0%,rgba(6,6,6,1) 100%);
   margin: 0px;
   padding: 0px;
 <<<<<<< HEAD
@@ -47,7 +47,7 @@ h1 {
 nav {
   text-align: center;
   list-style: none;
-  background-color: red;
+  background: radial-gradient(ellipse at center, rgba(216,40,0,1) 0%,rgba(161,16,3,1) 100%);
   padding: 1%;
   margin: 0px;
   margin-bottom: 15px;
@@ -357,7 +357,7 @@ p {
 }
 
 #game .col-1andHalf {
-  border: 1px solid black;
+  border: 2px solid transparent;
 }
 
 #game div img {

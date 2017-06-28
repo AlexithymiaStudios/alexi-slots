@@ -97,3 +97,8 @@ resetButton.addEventListener('click', function(){
   alert('Your balance has been reset.');
   window.location.href = 'index.html';
 });
+
+if (Data.loadCurrentUser() === null) {
+  pastUsersForm.hidden = true;
+  currentUserSettings.hidden = true;
+}

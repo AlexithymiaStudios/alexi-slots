@@ -98,7 +98,15 @@ resetButton.addEventListener('click', function(){
   window.location.href = 'index.html';
 });
 
+//Startup setting
 if (Data.loadCurrentUser() === null) {
   pastUsersForm.hidden = true;
   currentUserSettings.hidden = true;
 }
+
+//
+difficultySelection.onchange = function () {
+  var elem = (typeof this.selectedIndex === "undefined" ? window.event.srcElement : this);
+  var value = elem.value || elem.options[elem.selectedIndex].value;
+  alert(value);
+};

@@ -4,7 +4,10 @@ body {
   background-color: black;
   margin: 0px;
   padding: 0px;
+<<<<<<< HEAD
+=======
   width: 1200px;
+>>>>>>> 0ecbcb08f99e97937f424caf4b7be0ba1c56bae4
 }
 
 * {
@@ -47,6 +50,7 @@ nav {
   background-color: red;
   padding: 1%;
   margin: 0px;
+  margin-bottom: 15px;
 }
 
 ul{
@@ -72,8 +76,8 @@ li a:hover {
 
 /******************* WELCOME MESSAGE *******************/
 article p {
-  font-size: 50px;
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
   border: 0;
   padding: 0;
 }
@@ -191,11 +195,25 @@ section p {
   font-family: 'Roboto Mono', monospace;
 }
 /******************* GAME STYLES *******************/
+p {
+  font-family: 'Slackey', cursive;
+  font-size: 38px;
+}
 
 #welcomeMessage {
-  text-align: right;
-  margin: 2% 0%;
+  text-align: left;
+  float: left;
+  margin-left: 15%;
+}
+
+#balanceMessage {
   float: right;
+  text-align: right;
+  margin-right: 15%;
+}
+
+#game {
+  clear: both;
 }
 
 #game div {

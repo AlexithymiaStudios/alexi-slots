@@ -11,6 +11,8 @@ var userNameSpan = document.getElementById('userName'); // Is this id name okay?
 if (Data.loadCurrentUser() === null) {
   // load settings page
   window.location.href = 'options.html';
+} else if(Data.loadCurrentUser().moneyBalance() < 1){
+  isOutOfMoney();
 } else {
   var currentUser = Data.loadCurrentUser();
   renderUserName();
@@ -20,6 +22,8 @@ if (Data.loadCurrentUser() === null) {
 /*********** EVENT HANDLING ***********/
 // when play button is clicked
 playButton.addEventListener('click', function(event){
+  // add disabled property to button so it can't be clicked during animation
+  playButton.disabled = true;
   // change the image on button
   // playButton.style.background = 'url(\'img/handleDown.png\')';
   // picks a random img from emojiArray
@@ -39,7 +43,8 @@ playButton.addEventListener('click', function(event){
   // check if user is out of money
   currentUser = Data.loadCurrentUser();
   //if balance is 0
-  setTimeout(isOutOfMoney, 2000);
+  setTimeout(isOutOfMoney, 2050);
+  // turn button back on
 });
 
 /*********** FUNCTION ***********/
@@ -105,5 +110,8 @@ function isOutOfMoney(){
   if (currentUser.moneyBalance() < 1) {
     alert ('You\'ve out of money! Please reset your wallet.');
     window.location.href = 'options.html';
+    return true;
   }
+  playButton.disabled = false; // re enable button click now that the spin has complete
+  return false;
 }

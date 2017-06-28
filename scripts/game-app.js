@@ -35,7 +35,7 @@ playButton.addEventListener('click', function(event){
   // get new data from localStorage
   Data.loadCurrentUser();
   // Render new balance
-  renderBalance();
+  setTimeout(renderBalance,1600);
   // check if user is out of money
   currentUser = Data.loadCurrentUser();
   //if balance is 0
@@ -103,7 +103,7 @@ function isOutOfMoney(){
   var currentUser = Data.loadCurrentUser();
   //if balance is 0
   if (currentUser.moneyBalance() < 1) {
-    alert ("You've out of money! Please reset your wallet.");
+    alert ('You\'ve out of money! Please reset your wallet.');
     window.location.href = 'options.html';
   }
 }

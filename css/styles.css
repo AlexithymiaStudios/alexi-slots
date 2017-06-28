@@ -80,6 +80,7 @@ article p {
 
 
 /******************* OPTION *******************/
+
 form input {
   color: black;
   /*font-family:  'Gloria Hallelujah', cursive;*/
@@ -113,15 +114,16 @@ input[type=text]:focus {
 }
 
 form {
-border: 6px dotted yellow;
-width: 28%;
-height: 200px;
-float:left;
-font-size: 24px;
-text-align: center;
-/*background: radial-gradient(ellipse at center, rgba(0,23,232,1) 0%,rgba(14,0,107,1) 100%);*/
-padding: 30px;
-margin: 2%
+  border: 6px dotted yellow;
+  width: 28%;
+  height: 200px;
+  float:left;
+  font-size: 24px;
+  text-align: center;
+  /*background: radial-gradient(ellipse at center, rgba(0,23,232,1) 0%,rgba(14,0,107,1) 100%);*/
+  padding: 30px;
+  padding-bottom: 0px;
+  margin: 2%
 }
 
 #newUser{
@@ -165,10 +167,14 @@ button {
 .right {
   border: 6px dotted yellow;
   text-align: center;
-  padding: 1%;
+  padding: 2%;
   margin-left: 11%;
   margin-right: 11%;
   margin-bottom: 5%;
+}
+
+#resetBalanceButton {
+    margin: 2% 0%;
 }
 
 button:hover {

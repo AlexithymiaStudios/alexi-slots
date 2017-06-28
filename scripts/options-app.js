@@ -13,7 +13,7 @@ function insertNewUser() {
   input.setAttribute('type', 'text');
   input.setAttribute('name', 'userNameSelected');
   input.setAttribute('placeholder', 'Enter your name');
-  label.textContent = 'New User';
+  label.textContent = 'Create a User';
   form.appendChild(label);
   form.appendChild(input);
   button.setAttribute('id', 'addNewUser');
@@ -28,7 +28,7 @@ function insertPastUsers() {
   var selectUser = document.getElementById('selectUser');
   var button = document.createElement('button');
   form.setAttribute('id', 'pastUsers');
-  label.textContent = 'Current Users: Select the User';
+  label.textContent = 'Select a User';
   var select = document.createElement('select');
   select.setAttribute('name', 'userNameSelected');
   var allusers = Data.getAllUsers();

@@ -104,9 +104,16 @@ if (Data.loadCurrentUser() === null) {
   currentUserSettings.hidden = true;
 }
 
-//
 difficultySelection.onchange = function () {
-  var elem = (typeof this.selectedIndex === "undefined" ? window.event.srcElement : this);
+  var elem = (typeof this.selectedIndex === 'undefined' ? window.event.srcElement : this);
   var value = elem.value || elem.options[elem.selectedIndex].value;
-  alert(value);
+  var currentUser = Data.loadCurrentUser();
+  if ('easy' === value ) {
+    currentUser.slots = ['wildcard.gif','wildcard.gif','dancer.png','dog.png','poop.png','unicorn.png'];
+  } if ('medium' === value) {
+    currentUser.slots = ['wildcard.gif','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+  } if ('hard' === value) {
+    currentUser.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+  }
+  Data.saveUser(currentUser);
 };

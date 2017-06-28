@@ -94,4 +94,6 @@ resetButton.addEventListener('click', function(){
   var currentUser = Data.loadCurrentUser();
   currentUser.resetStats();
   Data.saveUser(currentUser);
+  alert('Your balance has been reset.');
+  window.location.href = 'index.html';
 });

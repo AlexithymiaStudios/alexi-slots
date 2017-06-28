@@ -22,6 +22,8 @@ if (Data.loadCurrentUser() === null) {
 /*********** EVENT HANDLING ***********/
 // when play button is clicked
 playButton.addEventListener('click', function(event){
+  // add disabled property to button so it can't be clicked during animation
+  playButton.disabled = true;
   // change the image on button
   // playButton.style.background = 'url(\'img/handleDown.png\')';
   // picks a random img from emojiArray
@@ -42,6 +44,7 @@ playButton.addEventListener('click', function(event){
   currentUser = Data.loadCurrentUser();
   //if balance is 0
   setTimeout(isOutOfMoney, 2000);
+  // turn button back on
 });
 
 /*********** FUNCTION ***********/
@@ -109,5 +112,6 @@ function isOutOfMoney(){
     window.location.href = 'options.html';
     return true;
   }
+  playButton.disabled = false; // re enable button click now that the spin has complete
   return false;
 }

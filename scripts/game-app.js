@@ -11,6 +11,8 @@ var userNameSpan = document.getElementById('userName'); // Is this id name okay?
 if (Data.loadCurrentUser() === null) {
   // load settings page
   window.location.href = 'options.html';
+} else if(Data.loadCurrentUser().moneyBalance() < 1){
+  isOutOfMoney();
 } else {
   var currentUser = Data.loadCurrentUser();
   renderUserName();
@@ -105,5 +107,7 @@ function isOutOfMoney(){
   if (currentUser.moneyBalance() < 1) {
     alert ('You\'ve out of money! Please reset your wallet.');
     window.location.href = 'options.html';
+    return true;
   }
+  return false;
 }

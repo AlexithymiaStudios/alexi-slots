@@ -1,7 +1,8 @@
 'use strict';
 
 /*********** VARIABLE ***********/
-var emojiArray = ['alien.png','cat.png', 'dancer.png','dog.png','poop.png','unicorn.png'];
+
+var emojiArray = []; // This is populated from current user slots
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
@@ -16,6 +17,7 @@ if (Data.loadCurrentUser() === null) {
   isOutOfMoney();
 } else {
   var currentUser = Data.loadCurrentUser();
+  emojiArray = currentUser.slots;
   renderUserName();
   renderBalance();
 }

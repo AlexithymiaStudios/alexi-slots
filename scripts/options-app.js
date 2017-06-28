@@ -45,6 +45,7 @@ function insertPastUsers() {
   label.textContent = 'Select a User';
   var select = document.createElement('select');
   select.setAttribute('name', 'userNameSelected');
+  select.setAttribute('id', 'selectedCurrentUser');
   var allusers = Data.getAllUsers();
   for(var i = 0; i < allusers.length; i++){
     var each = allusers[i];
@@ -100,3 +101,31 @@ resetButton.addEventListener('click', function(){
   alert('Your balance has been reset.');
   window.location.href = 'index.html';
 });
+
+//Startup setting
+if (Data.loadCurrentUser() === null) {
+  pastUsersForm.hidden = true;
+  currentUserSettings.hidden = true;
+} else {
+  pastUsers.userNameSelected.value = Data.loadCurrentUser().userName;
+}
+
+selectedCurrentUser.onchange = function() {
+  var elem = (typeof this.selectedIndex === 'undefined' ? window.event.srcElement : this);
+  var value = elem.value || elem.options[elem.selectedIndex].value;
+  resetBalanceButton.textContent = 'Reset Balance of $' + Data.loadUserName(value).moneyBalance();
+};
+
+difficultySelection.onchange = function () {
+  var elem = (typeof this.selectedIndex === 'undefined' ? window.event.srcElement : this);
+  var value = elem.value || elem.options[elem.selectedIndex].value;
+  var currentUser = Data.loadCurrentUser();
+  if ('easy' === value ) {
+    currentUser.slots = ['wildcard.gif','wildcard.gif','dancer.png','dog.png','poop.png','unicorn.png'];
+  } if ('medium' === value) {
+    currentUser.slots = ['wildcard.gif','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+  } if ('hard' === value) {
+    currentUser.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+  }
+  Data.saveUser(currentUser);
+};

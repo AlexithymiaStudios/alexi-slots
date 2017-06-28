@@ -90,7 +90,7 @@ form input {
 }
 
 input {
-    padding:5px;
+    margin: 5%;
     border:2px solid #ccc;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -105,32 +105,59 @@ select {
       font-family: 'Roboto Mono', monospace;
 }
 
+option {
+    font-size: 20px;
+    color: black;
+      font-family: 'Roboto Mono', monospace;
+}
+
 input[type=text]:focus {
     border-color:#333;
 }
 
 form {
-border: 5px dashed yellow;
-width: 250px;
+border: 5px dotted yellow;
+width: 25%;
 height: 200px;
 float:left;
 font-size: 24px;
 text-align: center;
-background: radial-gradient(ellipse at center, rgba(0,23,232,1) 0%,rgba(14,0,107,1) 100%);
-padding: 20px;
-margin-bottom: 20px;
-margin-left: 50px;
+/*background: radial-gradient(ellipse at center, rgba(0,23,232,1) 0%,rgba(14,0,107,1) 100%);*/
+padding: 30px;
+margin: 2%
 }
 
-form #currentUsers {
+#newUser{
+  float: left;
+  margin-left: 15%
+}
 
+#pastUsers{
+  float: right;
+  margin-right: 15%
 }
 
 button {
   color: black;
   font-size: 20px;
   font-family: 'Roboto Mono', monospace;
+}
 
+#addNewUser {
+  margin: 5%;
+}
+
+#showPastUsers {
+  margin: 5%;
+}
+
+.right {
+  border: 5px dotted yellow;
+  text-align: center;
+  padding: 1%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
 }
 
 #resetBalanceButton {
@@ -175,7 +202,6 @@ button {
 
 #welcome {
   font-size: 40px;
-  padding: 30px;
   font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
 }
@@ -187,6 +213,8 @@ button {
 section p {
   font-size: 20px;
   font-family: 'Roboto Mono', monospace;
+  padding-bottom: 1%;
+  margin: 0px;
 }
 /******************* GAME STYLES *******************/
 p {

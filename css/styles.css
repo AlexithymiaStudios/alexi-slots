@@ -4,6 +4,7 @@ body {
   background: radial-gradient(ellipse at center, rgba(54,54,54,1) 0%,rgba(6,6,6,1) 100%);
   margin: 0px;
   padding: 0px;
+  width: 1200px;
 }
 
 * {
@@ -14,14 +15,13 @@ main {
   margin: 0% 5%;
 }
 
-article p {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 20px;
-  border: 0;
-  padding: 0;
+.userChart {
+  padding: 0 10%;
 }
 
-/******************* HEADER *******************/
+.userDiv {
+  padding: 0 50px;
+}
 
 #title {
   background-image: url('../img/vegas-sign.png');
@@ -71,54 +71,57 @@ li a:hover {
      cursor:pointer;
 }
 
-/******************* OPTIONS *******************/
+/******************* WELCOME MESSAGE *******************/
+article p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  border: 0;
+  padding: 0;
+}
 
-form {
-  border: 6px dotted yellow;
-  width: 28%;
-  height: 200px;
-  float:left;
-  font-size: 24px;
-  text-align: center;
-  /*background: radial-gradient(ellipse at center, rgba(0,23,232,1) 0%,rgba(14,0,107,1) 100%);*/
-  padding: 30px;
-  padding-bottom: 0px;
-  margin: 2%
+
+/******************* OPTION *******************/
+form input {
+  color: black;
+  /*font-family:  'Gloria Hallelujah', cursive;*/
 }
 
 input {
-  color: black;
-  margin: 5%;
-  border:2px solid #ccc;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  font-size: 20px;
-  font-family: 'Roboto Mono', monospace;
-  padding-left: 5px;
+    margin: 5%;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    padding-left: 5px;
+
 }
 
 select {
-  font-size: 20px;
-  color: black;
-  font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: black;
+    font-family: 'Roboto Mono', monospace;
 }
 
 option {
-  font-size: 20px;
-  color: black;
-  font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: black;
+    font-family: 'Roboto Mono', monospace;
 }
 
 input[type=text]:focus {
     border-color:#333;
 }
 
-#optionMain label {
-  display: block;
-}
-
-#addNewUser {
-  margin: 5%;
+form {
+border: 6px dotted yellow;
+width: 28%;
+height: 200px;
+float:left;
+font-size: 24px;
+text-align: center;
+padding: 30px;
+margin: 2%
 }
 
 #newUser{
@@ -126,16 +129,12 @@ input[type=text]:focus {
   margin-left: 11%
 }
 
-#showPastUsers {
-  margin: 5%;
-}
-
 #pastUsers{
   float: right;
   margin-right: 11%
 }
 
-#optionMain button {
+button {
   color: white;
   font-size: 20px;
   font-family: 'Roboto Mono', monospace;
@@ -155,7 +154,24 @@ input[type=text]:focus {
   text-shadow:0px 1px 0px #283966;
 }
 
-#optionMain button:hover {
+#addNewUser {
+  margin: 5%;
+}
+
+#showPastUsers {
+  margin: 5%;
+}
+
+.right {
+  border: 6px dotted yellow;
+  text-align: center;
+  padding: 1%;
+  margin-left: 11%;
+  margin-right: 11%;
+  margin-bottom: 5%;
+}
+
+button:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
 	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
 	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
@@ -166,41 +182,15 @@ input[type=text]:focus {
 	background-color:#476e9e;
 }
 
-#optionMain button:active {
-	position:relative;
-	top:1px;
-}
+button:active {
+    	position:relative;
+    	top:1px;
+    }
 
-.right {
-  border: 6px dotted yellow;
+#welcome {
+  font-size: 40px;
+  font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
-  padding: 2%;
-  margin-left: 11%;
-  margin-right: 11%;
-  margin-bottom: 2%;
-}
-
-#instructions {
-  border: 6px dotted yellow;
-  margin: 0% 15% 4% 15%;
-  padding: 2%;
-  text-align: center;
-  font-family: 'Roboto Mono', monospace;
-}
-
-#instructions h3 {
-  font-size: 24px;
-  margin-top: 1%;
-}
-
-#instructions li {
-  /*list-style-type: none;*/
-  text-align: left;
-  padding: 5px;
-}
-
-#resetBalanceButton {
-    margin: 2% 0%;
 }
 
 #selectUser {
@@ -461,13 +451,8 @@ canvas {
 
 .userChart {
   padding: 20px;
-  border: 6px dotted yellow;
+  border: 5px solid #333333;
   margin: 1% 3.5%;
-  display: inline;
-}
-
-.userDiv {
-  padding: 0 50px;
 }
 
 #chart h3 {
@@ -475,6 +460,11 @@ canvas {
   text-transform: uppercase;
   font-family: 'Roboto Mono', monospace;
 }
+
+.useChart  {
+  display: inline;
+}
+
 
 /******************* GRID STYLES *******************/
 

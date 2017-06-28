@@ -5,12 +5,15 @@ var emojiArray = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unico
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
+var game = document.getElementById('game');
 
 /*********** MAIN FLOW ***********/
 // get data and name
 if (Data.loadCurrentUser() === null) {
   // load settings page
   window.location.href = 'options.html';
+} else if(Data.loadCurrentUser().moneyBalance() < 1){
+  isOutOfMoney();
 } else {
   var currentUser = Data.loadCurrentUser();
   renderUserName();
@@ -20,6 +23,8 @@ if (Data.loadCurrentUser() === null) {
 /*********** EVENT HANDLING ***********/
 // when play button is clicked
 playButton.addEventListener('click', function(event){
+  // add disabled property to button so it can't be clicked during animation
+  playButton.disabled = true;
   // change the image on button
   // playButton.style.background = 'url(\'img/handleDown.png\')';
   // picks a random img from emojiArray
@@ -39,7 +44,8 @@ playButton.addEventListener('click', function(event){
   // check if user is out of money
   currentUser = Data.loadCurrentUser();
   //if balance is 0
-  setTimeout(isOutOfMoney, 2000);
+  setTimeout(isOutOfMoney, 2050);
+  // turn button back on
 });
 
 /*********** FUNCTION ***********/
@@ -74,15 +80,26 @@ function updateWins(){
     // update jackpots and response in currentUser
     currentUser.jackpots++;
     setTimeout(function(){
-      response.textContent = 'You hit the Jackpot!';
+      response.className = ' jackpotBigBG';
+      winningAnimations('jackpotBackground');
     }, 1600);
   } else if (currentEmojis[0] === currentEmojis[1]) {
     currentUser.pairs++;
     setTimeout(function(){
-      response.textContent = 'You got a pair!';
+      winningAnimations('pairBackground');
     }, 1600);
   } else {
-    response.textContent = ' ';
+    response.className = ' ';
+    winningAnimations(' ');
+  }
+}
+
+function winningAnimations(className){
+  var divs = document.getElementsByClassName('slotWindow');
+  divs[0].lastChild.className += ' ' + className;
+  divs[1].lastChild.className += ' ' + className;
+  if (className === 'jackpotBackground' || className === ' ') {
+    divs[2].lastChild.className += ' ' + className;
   }
 }
 
@@ -105,5 +122,8 @@ function isOutOfMoney(){
   if (currentUser.moneyBalance() < 1) {
     alert ('You\'ve out of money! Please reset your wallet.');
     window.location.href = 'options.html';
+    return true;
   }
+  playButton.disabled = false; // re enable button click now that the spin has complete
+  return false;
 }

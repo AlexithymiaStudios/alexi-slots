@@ -4,10 +4,6 @@ body {
   background: radial-gradient(ellipse at center, rgba(54,54,54,1) 0%,rgba(6,6,6,1) 100%);
   margin: 0px;
   padding: 0px;
-<<<<<<< HEAD
-=======
-  width: 1200px;
->>>>>>> 0ecbcb08f99e97937f424caf4b7be0ba1c56bae4
 }
 
 * {
@@ -90,17 +86,26 @@ form input {
 }
 
 input {
-    padding:5px;
+    margin: 5%;
     border:2px solid #ccc;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     font-size: 20px;
     font-family: 'Roboto Mono', monospace;
+    padding-left: 5px;
 
 }
 
 select {
     font-size: 20px;
+    color: black;
+      font-family: 'Roboto Mono', monospace;
+}
+
+option {
+    font-size: 20px;
+    color: black;
+      font-family: 'Roboto Mono', monospace;
 }
 
 input[type=text]:focus {
@@ -108,56 +113,65 @@ input[type=text]:focus {
 }
 
 form {
-border: 5px dashed yellow;
-width: 250px;
+border: 6px dotted yellow;
+width: 28%;
 height: 200px;
 float:left;
 font-size: 24px;
 text-align: center;
-background-color: blue;
-padding: 20px;
-margin-bottom: 20px;
-margin-left: 50px;
+/*background: radial-gradient(ellipse at center, rgba(0,23,232,1) 0%,rgba(14,0,107,1) 100%);*/
+padding: 30px;
+margin: 2%
 }
 
-form #currentUsers {
+#newUser{
+  float: left;
+  margin-left: 11%
+}
 
+#pastUsers{
+  float: right;
+  margin-right: 11%
 }
 
 button {
-  color: black;
+  color: white;
   font-size: 20px;
   font-family: 'Roboto Mono', monospace;
-
+  background: radial-gradient(ellipse at center, rgba(0,23,232,1) 0%,rgba(14,0,107,1) 100%);
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  border:none;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:19px;
+  padding: 10px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #283966;
 }
 
-#resetBalanceButton {
-    -moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
-    -webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
-    box-shadow: 0px 0px 0px 2px #9fb4f2;
-  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1F3A93), color-stop(1, #2574A9));
-  	background:-moz-linear-gradient(top, #1F3A93 5%, #2574A9 100%);
-  	background:-webkit-linear-gradient(top, #1F3A93 5%, #2574A9 100%);
-  	background:-o-linear-gradient(top, #1F3A93 5%, #2574A9 100%);
-  	background:-ms-linear-gradient(top, #1F3A93 5%, #2574A9 100%);
-  	background:linear-gradient(to bottom, #1F3A93 5%, #2574A9 100%);
-  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1F3A93', endColorstr='#2574A9',GradientType=0);
-  	background-color:#1F3A93;
-  	-moz-border-radius:10px;
-  	-webkit-border-radius:10px;
-  	border-radius:10px;
-  	border:none;
-  	display:inline-block;
-  	cursor:pointer;
-  	color:#ffffff;
-  	font-family:Arial;
-  	font-size:19px;
-  	padding:12px 37px;
-  	text-decoration:none;
-  	text-shadow:0px 1px 0px #283966;
-  }
+#addNewUser {
+  margin: 5%;
+}
 
-#resetBalanceButton:hover {
+#showPastUsers {
+  margin: 5%;
+}
+
+.right {
+  border: 6px dotted yellow;
+  text-align: center;
+  padding: 1%;
+  margin-left: 11%;
+  margin-right: 11%;
+  margin-bottom: 5%;
+}
+
+button:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
 	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
 	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
@@ -168,15 +182,15 @@ button {
 	background-color:#476e9e;
 }
 
-#resetBalanceButton:active {
+button:active {
     	position:relative;
     	top:1px;
     }
 
 #welcome {
   font-size: 40px;
-  padding: 30px;
   font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
 }
 
 #selectUser {
@@ -186,7 +200,10 @@ button {
 section p {
   font-size: 20px;
   font-family: 'Roboto Mono', monospace;
+  padding-bottom: 1%;
+  margin: 0px;
 }
+
 /******************* GAME STYLES *******************/
 p {
   font-family: 'Slackey', cursive;
@@ -211,11 +228,11 @@ p {
 
 #game div {
   text-align: center;
-  border: 10px dotted yellow;
+  border: 6px dotted yellow;
   overflow: hidden;
 }
 
-#playButton{
+ #playButton{
   background: url('../img/handleUp.png') no-repeat;
   height:408px;
   width:121px;
@@ -226,6 +243,33 @@ p {
 #playButton:active {
   background: url('../img/handleDown.png');
 }
+
+#response {
+  width: 900px;
+  height: 300px;
+  margin-top: -180px;
+  margin-left: 19%;
+}
+
+.jackpotBigBG {
+  background: url('../img/jackpotbg-noborder.png');
+  background-size: 100%;
+}
+
+
+.jackpotBackground {
+  background: url('../img/starsrain.gif');
+  background-size: 100%;
+  transform: scale(2);
+  filter: FlipH;
+}
+
+.pairBackground {
+  background: url('../img/moneyrain.gif');
+  background-size: 100%;
+  transform: scale(2);
+}
+
 
 @keyframes spinning0 {
     0%   {

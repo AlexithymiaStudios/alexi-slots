@@ -28,7 +28,7 @@ function insertPastUsers() {
   var selectUser = document.getElementById('selectUser');
   var button = document.createElement('button');
   form.setAttribute('id', 'pastUsers');
-  label.textContent = 'Select the User';
+  label.textContent = 'Current Users: Select the User';
   var select = document.createElement('select');
   select.setAttribute('name', 'userNameSelected');
   var allusers = Data.getAllUsers();
@@ -94,4 +94,6 @@ resetButton.addEventListener('click', function(){
   var currentUser = Data.loadCurrentUser();
   currentUser.resetStats();
   Data.saveUser(currentUser);
+  alert('Your balance has been reset.');
+  window.location.href = 'index.html';
 });

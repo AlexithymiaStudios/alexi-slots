@@ -1,13 +1,13 @@
 /******************* GENERAL STYLES *******************/
 
+* {
+  color: white;
+}
+
 body {
   background: radial-gradient(ellipse at center, rgba(54,54,54,1) 0%,rgba(6,6,6,1) 100%);
   margin: 0px;
   padding: 0px;
-}
-
-* {
-  color: white;
 }
 
 main {
@@ -80,7 +80,6 @@ form {
   float:left;
   font-size: 24px;
   text-align: center;
-  /*background: radial-gradient(ellipse at center, rgba(0,23,232,1) 0%,rgba(14,0,107,1) 100%);*/
   padding: 30px;
   padding-bottom: 0px;
   margin: 2%
@@ -141,8 +140,6 @@ input[type=text]:focus {
   font-family: 'Roboto Mono', monospace;
   background: radial-gradient(ellipse at center, rgba(0,23,232,1) 0%,rgba(14,0,107,1) 100%);
   box-shadow: 0px 0px 0px 2px #9fb4f2;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
   border-radius:10px;
   border:none;
   display:inline-block;
@@ -156,13 +153,11 @@ input[type=text]:focus {
 }
 
 #optionMain button:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
 	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
 	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
 	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
 	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
 	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
 	background-color:#476e9e;
 }
 
@@ -302,14 +297,12 @@ p {
       content:url('../img/alien.png');
       top: 0px;
       filter: blur(7px)
-
     }
     75%  {
       content:url('../img/dog.png');
       top: 71px;
       filter: blur(7px)
     }
-
     100% {
       content:url('../img/unicorn.png');
       top: 209px;
@@ -319,7 +312,6 @@ p {
 
 @keyframes spinning1 {
     0%   {
-
       content:url('../img/cat.png');
       top: -209px;
       filter: blur(10px)
@@ -333,14 +325,12 @@ p {
       content:url('../img/dog.png');
       top: 0px;
       filter: blur(7px)
-
     }
     75%  {
       content:url('../img/alien.png');
       top: 71px;
       filter: blur(7px)
     }
-
     100% {
       content:url('../img/unicorn.png');
       top: 209px;
@@ -363,20 +353,19 @@ p {
       content:url('../img/alien.png');
       top: 0px;
       filter: blur(7px)
-
     }
     75%  {
       content:url('../img/cat.png');
       top: 71px;
       filter: blur(7px)
     }
-
     100% {
       content:url('../img/dancer.png');
       top: 209px;
       filter: blur(7px)
     }
 }
+
 @keyframes blinking0 {
     0%   {background-color: red}
     25%   {background-color: yellow}
@@ -498,7 +487,6 @@ canvas {
   float: left;
 }
 /*one column is 8.33% wide*/
-
 .col-1 {
   width: 8.33%;
 }

@@ -46,6 +46,7 @@ nav {
   background-color: red;
   padding: 1%;
   margin: 0px;
+  margin-bottom: 15px;
 }
 
 ul{
@@ -71,8 +72,8 @@ li a:hover {
 
 /******************* WELCOME MESSAGE *******************/
 article p {
-  font-size: 50px;
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
   border: 0;
   padding: 0;
 }
@@ -96,12 +97,25 @@ button {
 }
 
 /******************* GAME STYLES *******************/
+p {
+  font-family: 'Slackey', cursive;
+  font-size: 38px;
+}
 
 #welcomeMessage {
-  text-align: right;
-  margin: 2% 0%;
+  text-align: left;
+  float: left;
+  margin-left: 15%;
+}
+
+#balanceMessage {
   float: right;
-  clear:both;
+  text-align: right;
+  margin-right: 15%;
+}
+
+#game {
+  clear: both;
 }
 
 #game div {

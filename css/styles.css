@@ -4,10 +4,6 @@ body {
   background: radial-gradient(ellipse at center, rgba(54,54,54,1) 0%,rgba(6,6,6,1) 100%);
   margin: 0px;
   padding: 0px;
-<<<<<<< HEAD
-=======
-  width: 1200px;
->>>>>>> 0ecbcb08f99e97937f424caf4b7be0ba1c56bae4
 }
 
 * {
@@ -228,6 +224,33 @@ p {
 #playButton:active {
   background: url('../img/handleDown.png');
 }
+
+#response {
+  width: 900px;
+  height: 300px;
+  margin-top: -180px;
+  margin-left: 19%;
+}
+
+.jackpotBigBG {
+  background: url('../img/jackpotbg-noborder.png');
+  background-size: 100%;
+}
+
+
+.jackpotBackground {
+  background: url('../img/starsrain.gif');
+  background-size: 100%;
+  transform: scale(2);
+  filter: FlipH;
+}
+
+.pairBackground {
+  background: url('../img/moneyrain.gif');
+  background-size: 100%;
+  transform: scale(2);
+}
+
 
 @keyframes spinning0 {
     0%   {

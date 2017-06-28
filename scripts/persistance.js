@@ -1,6 +1,6 @@
 'use strict';
 
-var initialBalance = 5;
+var initialBalance = 25;
 var jackpotWorth = 3;
 var pairWorth = 2;
 

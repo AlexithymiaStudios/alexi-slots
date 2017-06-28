@@ -5,6 +5,7 @@ var emojiArray = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unico
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
+var game = document.getElementById('game');
 
 /*********** MAIN FLOW ***********/
 // get data and name
@@ -79,15 +80,26 @@ function updateWins(){
     // update jackpots and response in currentUser
     currentUser.jackpots++;
     setTimeout(function(){
-      response.textContent = 'You hit the Jackpot!';
+      response.className = ' jackpotBigBG';
+      winningAnimations('jackpotBackground');
     }, 1600);
   } else if (currentEmojis[0] === currentEmojis[1]) {
     currentUser.pairs++;
     setTimeout(function(){
-      response.textContent = 'You got a pair!';
+      winningAnimations('pairBackground');
     }, 1600);
   } else {
-    response.textContent = ' ';
+    response.className = ' ';
+    winningAnimations(' ');
+  }
+}
+
+function winningAnimations(className){
+  var divs = document.getElementsByClassName('slotWindow');
+  divs[0].lastChild.className += ' ' + className;
+  divs[1].lastChild.className += ' ' + className;
+  if (className === 'jackpotBackground' || className === ' ') {
+    divs[2].lastChild.className += ' ' + className;
   }
 }
 

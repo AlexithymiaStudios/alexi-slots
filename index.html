@@ -8,9 +8,6 @@
   </head>
   <body>
     <header>
-      <div id='title'>
-        <h1><br/>Emojii-Slots</h1>
-      </div>
       <nav class="row">
         <ul>
           <li class="column col-4"><a href="index.html">Game</a></li>
@@ -20,10 +17,12 @@
       </nav>
     </header>
     <main>
-      <article id="welcomeMessage"><p>Welcome <span id="userName"></span></p></article>
-      <article id="balanceMessage">
-        <p>Balance: $<span id="balance"></span></p>
-      </article>
+      <section class="row" id="userDetails">
+        <div class="column col-1andHalf"></div>
+        <article class="column col-3" id="welcomeMessage"><p>Welcome <span id="userName"></span></p></article>
+        <article class="column col-3 difficultyMessage"><p>Difficulty: <span id="difficulty"></span></p></article>
+        <article class="column col-3"id="balanceMessage"><p>Balance: $<span id="balance"></span></p></article>
+      </section>
       <article class="row" id="game">
         <div class="column col-1andHalf"></div>
         <div class="column col-3 slotWindow" ><img src="img/spin.png" alt="Emoji" class="initialSpinEmoji0"></div>

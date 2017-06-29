@@ -22,6 +22,9 @@ article p {
   padding: 0;
 }
 
+li, p {
+  font-size: 24px;
+}
 /******************* HEADER *******************/
 
 #title {
@@ -48,7 +51,7 @@ nav {
   background: radial-gradient(ellipse at center, rgba(216,40,0,1) 0%,rgba(161,16,3,1) 100%);
   padding: 1%;
   margin: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 ul{
@@ -86,11 +89,22 @@ form {
   margin: 2%
 }
 
+#currentUserSettings form {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 10px;
+  width: 350px;
+}
+
 h3, .right {
-  font-size: 24px;
+  font-size: 30px;
   text-align: center;
   font-family: 'Roboto Mono', monospace;
   height: auto;
+}
+
+#resetBalance p {
+  padding: 20px 0px;
 }
 
 #label {
@@ -110,9 +124,9 @@ h3, .right {
   height: auto;
 }
 
-select#difficultySelection {
+select#difficultySelection, select#slotsSelection {
   font-family: 'Roboto Mono', monospace;
-  margin-top: 5%;
+  margin: 5% auto;
 }
 
 input {
@@ -227,7 +241,7 @@ input[type=text]:focus {
 }
 
 #instructions h3 {
-  font-size: 24px;
+  font-size: 30px;
   margin-top: 1%;
   margin-right: 10%;
   text-align: center;
@@ -249,7 +263,7 @@ input[type=text]:focus {
 }
 
 section p {
-  font-size: 20px;
+  font-size: 24px;
   font-family: 'Roboto Mono', monospace;
   padding-bottom: 1%;
   margin: 0px;
@@ -261,20 +275,27 @@ p {
   font-size: 38px;
 }
 
-#welcomeMessage {
-  text-align: left;
-  float: left;
-  margin-left: 15%;
+#userDetails .col-1andHalf{
+  border: 2px solid transparent;
+}
+
+
+#difficulty {
+  text-transform: capitalize;
+}
+
+.difficultyMessage {
+  margin-left: 60px;
 }
 
 #balanceMessage {
-  float: right;
-  text-align: right;
-  margin-right: 15%;
+  margin-left: 80px;
+  /*border: 2px solid red;*/
 }
 
 #game {
   clear: both;
+  margin-top: 20px;
 }
 
 #game div {
@@ -593,6 +614,7 @@ canvas {
 
 #chart h3 {
   text-align: center;
+  font-size: 30px;
   text-transform: uppercase;
   font-family: 'Roboto Mono', monospace;
 }

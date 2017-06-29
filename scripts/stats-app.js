@@ -117,7 +117,16 @@ function drawGraph(){
     // Draw the actual chart
     new Chart(ctx,{
       type: 'pie',
-      data: data
+      data: data,
+      options: {
+        legend: {
+          display: true,
+          labels: {
+            fontColor: 'white',
+            fontSize: 20
+          }
+        }
+      }
     });
   }
 }

@@ -5,7 +5,8 @@
 var emojiArray = []; // This is populated from current user slots
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
-var userNameSpan = document.getElementById('userName'); // Is this id name okay?
+var difficultySpan = document.getElementById('difficulty');
+var userNameSpan = document.getElementById('userName');
 var game = document.getElementById('game');
 
 
@@ -20,6 +21,7 @@ if (Data.loadCurrentUser() === null) {
   var currentUser = Data.loadCurrentUser();
   emojiArray = currentUser.slots();
   renderUserName();
+  renderDifficulty();
   renderBalance();
 }
 
@@ -141,6 +143,11 @@ function winningImgAnimations(className){
 function renderUserName(){
   // update text content of the span
   userNameSpan.textContent = currentUser.userName;
+}
+
+function renderDifficulty(){
+  // update text content of the span
+  difficultySpan.textContent = currentUser.difficulty;
 }
 
 // function to render new balance

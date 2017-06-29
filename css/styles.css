@@ -51,7 +51,7 @@ nav {
   background: radial-gradient(ellipse at center, rgba(216,40,0,1) 0%,rgba(161,16,3,1) 100%);
   padding: 1%;
   margin: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 ul{
@@ -275,20 +275,27 @@ p {
   font-size: 38px;
 }
 
-#welcomeMessage {
-  text-align: left;
-  float: left;
-  margin-left: 15%;
+#userDetails .col-1andHalf{
+  border: 2px solid transparent;
+}
+
+
+#difficulty {
+  text-transform: capitalize;
+}
+
+.difficultyMessage {
+  margin-left: 60px;
 }
 
 #balanceMessage {
-  float: right;
-  text-align: right;
-  margin-right: 15%;
+  margin-left: 80px;
+  /*border: 2px solid red;*/
 }
 
 #game {
   clear: both;
+  margin-top: 20px;
 }
 
 #game div {

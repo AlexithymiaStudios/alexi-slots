@@ -7,7 +7,7 @@ var currentEmojis = [];
 var playButton = document.getElementById('playButton');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
 var game = document.getElementById('game');
-var wild = 'wildcard.gif';
+
 
 /*********** MAIN FLOW ***********/
 // get data and name
@@ -83,6 +83,7 @@ function updateWins(){
   var left = currentEmojis[0];
   var mid = currentEmojis[1];
   var right = currentEmojis[2];
+  var wild = Data.wild;
   if (
     left === mid && left === right ||
     left === wild && mid === right ||

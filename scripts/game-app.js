@@ -62,10 +62,11 @@ function getRandomEmojis(){
   return threeEmojis;
 }
 
+// emoji array =
+
 function renderEmojis(){
   var divs = document.getElementsByClassName('slotWindow');
   for (var i = 0; i < divs.length; i++) {
-    // divs[i].removeChild(divs[i].lastChild); // remove image from div
     var newDiv = document.createElement('div');
     newDiv.setAttribute('class', 'column col-3 slotWindow');
     newDiv.className += ' blinking' + [i];

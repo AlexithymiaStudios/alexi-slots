@@ -484,6 +484,75 @@ p {
   animation-timing-function: linear;
   }
 
+  .initialSpinEmoji0 {
+    transform: scale(1.5);
+    animation-name: initialSpinLogo0;
+    animation-iteration-count: infinite;
+    animation-duration: 1.75s;
+    animation-timing-function: linear;
+  }
+
+  @keyframes initialSpinLogo0 {
+      0%   {
+        top: -209px;
+      }
+      50%  {
+        top: 0px;
+      }
+      100% {
+        top: 209px;
+      }
+  }
+
+.initialSpinEmoji1 {
+  transform: scale(1.5);
+  opacity: 0;
+  animation-name: initialSpinLogo1;
+  animation-iteration-count: infinite;
+  animation-duration: 1.75s;
+  animation-timing-function: linear;
+  animation-delay: .75s;
+}
+
+@keyframes initialSpinLogo1 {
+    0%   {
+      top: -209px;
+      opacity: 1;
+    }
+    50%  {
+      top: 0px;
+      opacity: 1;
+    }
+    100% {
+      top: 209px;
+      opacity: 1;
+    }
+}
+
+.initialSpinEmoji2 {
+  transform: scale(1.5);
+  opacity: 0;
+  animation-name: initialSpinLogo2;
+  animation-iteration-count: infinite;
+  animation-duration: 1.75s;
+  animation-timing-function: linear;
+  animation-delay: 1.5s;
+}
+
+@keyframes initialSpinLogo2 {
+    0%   {
+      top: -209px;
+      opacity: 1;
+    }
+    50%  {
+      top: 0px;
+      opacity: 1;
+    }
+    100% {
+      top: 209px;
+      opacity: 1;
+    }
+}
 /******************* STATS *******************/
 main {
   min-width: 975px;

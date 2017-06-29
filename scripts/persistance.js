@@ -8,8 +8,8 @@ var Data = {wild: 'wildcard.gif'};
 var slots = {standard:['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'],
   underWater:['whale.png','dolphin.png','blowfish.png','fish.png','tropical_fish.png', 'octopus.png'],
   fruit: ['strawberry.png', 'grapes.png','cherries.png','pineapple.png','kiwi.png','tangerine.png'],
-  animals: ['fox.png','turtle.png','turkey.png','elephant.png','hatched_chick.png','butterfly.png'],
-  sports: ['soccer.png','basketball.png','football.png','8ball.png','ping_pong.png','ski.png'],
+  animals: ['fox.png','turtle.png','pig2.png','elephant.png','hatched_chick.png','butterfly.png'],
+  sports: ['soccer.png','basketball.png','football.png','ice_skate.png','ping_pong.png','ski.png'],
   faces: ['heart_eyes.png','relaxed.png','rofl.png','pensive.png','triumph.png','scream.png'],
   team: ['quinn.png', 'jose.png', 'tyler.png', 'alana.png', 'jordan.png', 'stephanie.png']
 };

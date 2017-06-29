@@ -285,12 +285,11 @@ p {
 }
 
 .difficultyMessage {
-  margin-left: 60px;
+  margin-left: 5%
 }
 
 #balanceMessage {
-  margin-left: 80px;
-  /*border: 2px solid red;*/
+  margin-left: 5%
 }
 
 #game {

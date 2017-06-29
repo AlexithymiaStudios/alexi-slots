@@ -111,6 +111,7 @@ if (Data.loadCurrentUser() === null) {
   newUser.className = 'centerNewUserDefault';
 } else {
   pastUsers.userNameSelected.value = Data.loadCurrentUser().userName;
+  difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
 }
 
 selectedCurrentUser.onchange = function() {
@@ -118,7 +119,6 @@ selectedCurrentUser.onchange = function() {
   var value = elem.value || elem.options[elem.selectedIndex].value;
   resetBalanceButton.textContent = 'Reset Balance of $' + Data.loadUserName(value).moneyBalance();
   difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
-  console.log(Data.loadCurrentUser().difficulty);
 };
 
 difficultySelection.onchange = function () {

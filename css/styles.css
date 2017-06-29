@@ -22,6 +22,9 @@ article p {
   padding: 0;
 }
 
+li, p {
+  font-size: 24px;
+}
 /******************* HEADER *******************/
 
 #title {
@@ -87,7 +90,7 @@ form {
 }
 
 h3, .right {
-  font-size: 24px;
+  font-size: 30px;
   text-align: center;
   font-family: 'Roboto Mono', monospace;
   height: auto;
@@ -227,7 +230,7 @@ input[type=text]:focus {
 }
 
 #instructions h3 {
-  font-size: 24px;
+  font-size: 30px;
   margin-top: 1%;
   margin-right: 10%;
   text-align: center;
@@ -249,7 +252,7 @@ input[type=text]:focus {
 }
 
 section p {
-  font-size: 20px;
+  font-size: 24px;
   font-family: 'Roboto Mono', monospace;
   padding-bottom: 1%;
   margin: 0px;

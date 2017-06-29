@@ -1,11 +1,13 @@
 'use strict';
 
 /*********** VARIABLE ***********/
-var emojiArray = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+
+var emojiArray = []; // This is populated from current user slots
 var currentEmojis = [];
 var playButton = document.getElementById('playButton');
 var userNameSpan = document.getElementById('userName'); // Is this id name okay?
 var game = document.getElementById('game');
+var wild = 'wildcard.gif';
 
 /*********** MAIN FLOW ***********/
 // get data and name
@@ -16,17 +18,18 @@ if (Data.loadCurrentUser() === null) {
   isOutOfMoney();
 } else {
   var currentUser = Data.loadCurrentUser();
+  emojiArray = currentUser.slots;
   renderUserName();
   renderBalance();
 }
 
 /*********** EVENT HANDLING ***********/
 // when play button is clicked
-playButton.addEventListener('click', function(event){
+playButton.addEventListener('click', function(){
   // add disabled property to button so it can't be clicked during animation
   playButton.disabled = true;
-  // change the image on button
-  // playButton.style.background = 'url(\'img/handleDown.png\')';
+  // remove response backgrounds
+  response.className = ' ';
   // picks a random img from emojiArray
   currentEmojis = getRandomEmojis();
   // update rounds in currentUser
@@ -48,7 +51,7 @@ playButton.addEventListener('click', function(event){
   // turn button back on
 });
 
-/*********** FUNCTION ***********/
+/*********** FUNCTIONS ***********/
 // Function to get three random emoji images.
 function getRandomEmojis(){
   var threeEmojis = [];
@@ -62,43 +65,73 @@ function getRandomEmojis(){
 function renderEmojis(){
   var divs = document.getElementsByClassName('slotWindow');
   for (var i = 0; i < divs.length; i++) {
-    divs[i].removeChild(divs[i].lastChild); // remove image from div
-    var clone = divs[i].cloneNode(true); // clone div
-    clone.className += ' blinking' + i;
-    game.replaceChild(clone, divs[i]); // replace div with new clone
+    // divs[i].removeChild(divs[i].lastChild); // remove image from div
+    var newDiv = document.createElement('div');
+    newDiv.setAttribute('class', 'column col-3 slotWindow');
+    newDiv.className += ' blinking' + [i];
+    game.replaceChild(newDiv, divs[i]); // replace div with newDiv
     var img = document.createElement('img'); // create new img
     img.setAttribute('src', 'img/' + currentEmojis[i]);
     img.setAttribute('alt', currentEmojis[i]);
     img.setAttribute('class','animation' + i);
-    clone.append(img); //append img to new clone
+    newDiv.append(img); //append img to new clone
   }
 }
 
 function updateWins(){
   var response = document.getElementById('response');
-  if (currentEmojis[0] === currentEmojis[1] && currentEmojis[0] === currentEmojis[2]) {
+  var left = currentEmojis[0];
+  var mid = currentEmojis[1];
+  var right = currentEmojis[2];
+  if (
+    left === mid && left === right ||
+    left === wild && mid === right ||
+    mid === wild && left === right ||
+    right === wild && left === mid ||
+    left === wild && mid === wild ||
+    mid === wild && right === wild ||
+    left === wild && right === wild
+    ) {
     // update jackpots and response in currentUser
     currentUser.jackpots++;
     setTimeout(function(){
       response.className = ' jackpotBigBG';
-      winningAnimations('jackpotBackground');
+      winningDivAnimations('jackpotBackground');
+      winningImgAnimations('jackpotZoom');
     }, 1600);
-  } else if (currentEmojis[0] === currentEmojis[1]) {
+  } else if (
+    left === mid ||
+    left === wild ||
+    mid === wild
+    )
+     {
     currentUser.pairs++;
     setTimeout(function(){
-      winningAnimations('pairBackground');
+      response.className = ' pairBigBG';
+      winningDivAnimations('pairBackground');
+      winningImgAnimations('pairZoom');
     }, 1600);
   } else {
     response.className = ' ';
-    winningAnimations(' ');
+    winningDivAnimations(' ');
+    winningImgAnimations(' ');
   }
 }
 
-function winningAnimations(className){
+function winningDivAnimations(className){
+  var divs = document.getElementsByClassName('slotWindow');
+  divs[0].className += ' ' + className;
+  divs[1].className += ' ' + className;
+  if (className === 'jackpotBackground' || className === ' ') {
+    divs[2].className += ' ' + className;
+  }
+}
+
+function winningImgAnimations(className){
   var divs = document.getElementsByClassName('slotWindow');
   divs[0].lastChild.className += ' ' + className;
   divs[1].lastChild.className += ' ' + className;
-  if (className === 'jackpotBackground' || className === ' ') {
+  if (className === 'jackpotZoom' || className === ' ') {
     divs[2].lastChild.className += ' ' + className;
   }
 }

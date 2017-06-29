@@ -29,10 +29,10 @@
       <section class="right" id="currentUserSettings">
         <form id='difficultyLevel'>
           <label id='label'>Current User Settings</label>
-          <select id='difficultySelection'>
-            <option value="Hard">hard</option>
-            <option value="Medium">medium</option>
-            <option value="Easy">easy</option>
+          <select name='difficultySelected' id='difficultySelection'>
+            <option value="hard">Hard</option>
+            <option value="medium">Medium</option>
+            <option value="easy">Easy</option>
           </select>
       </form>
         <button id="resetBalanceButton">Reset Balance</button>
@@ -42,19 +42,12 @@
         <h3>Instructions</h3>
         <ul>
           <li>Starting balance: $25</li>
-          <li>Pair (first two values are the same): $2</li>
-          <li>Jackpot: $5</li>
-          <li>All jackpot conditions:
-            left is wild card and middle equals right card;
-            middle is wild and left card equals right card;
-            right is wild card and left equals middle card;
-            left is wild  and middle equals wild card;
-            mid is wild and right card equals wild card;
-            left is wild and right is wild.
-          </li>
+          <li>Pair: $2 (first two emojis are the same)</li>
+          <li>Jackpot: $5 (three matching emojis)</li>
+          <li>Wildcard: These emojis show up in easy and medium difficuly games. The wildcard emoji counts as a match for every other emoji.</li>
           <li>Once you hit a balance of $0, you must restart your game.</li>
           <li>Select a player above or create a new one!</li>
-          <li>See the stats page to see statistic for all players.</li>
+          <li>See the stats page to see statistic for all players and your ranking.</li>
         </ul>
       </section>
       <section>

@@ -1,25 +1,30 @@
+
 'use strict';
 
-/************** VARIABLES **************/
+/*********** VARIABLE ***********/
 var resetButton = document.getElementById('resetBalanceButton');
 
-/************** SETUP **************/
-insertPastUsers();
-insertNewUser();
+/*********** SETUP ***********/
+function setup(){
+  insertPastUsers();
+  insertNewUser();
+}
+setup();
 
-/************** ADDITIONAL VARIABLES **************/
+/*********** ADDITIONAL VARIABLES ***********/
 var addNewUserButton = document.getElementById('addNewUser');
 var showPastUsersButton = document.getElementById('showPastUsers');
 var pastUsersForm = document.getElementById('pastUsers');
 var newUserForm = document.getElementById('newUser');
 
-/************** FUNCTIONS **************/
+/*********** FUNCTIONS ***********/
 function insertNewUser() {
   var form = document.createElement('form');
   var label = document.createElement('label');
   var selectUser = document.getElementById('selectUser');
   var button = document.createElement('button');
   form.setAttribute('id', 'newUser');
+  form.setAttribute('class', 'leftNewUser');
   var input = document.createElement('input');
   input.setAttribute('type', 'text');
   input.setAttribute('name', 'userNameSelected');
@@ -42,6 +47,7 @@ function insertPastUsers() {
   label.textContent = 'Select a User';
   var select = document.createElement('select');
   select.setAttribute('name', 'userNameSelected');
+  select.setAttribute('id', 'selectedCurrentUser');
   var allusers = Data.getAllUsers();
   for(var i = 0; i < allusers.length; i++){
     var each = allusers[i];
@@ -68,7 +74,7 @@ function checkIfValid(formInput) {
   return true;
 };
 
-/************** EVENT LISTENERS **************/
+/*********** EVENT LISTENERS ***********/
 addNewUserButton.addEventListener('click', function(event) {
   event.preventDefault();
   if (checkIfValid(newUserForm.userNameSelected)){
@@ -102,11 +108,33 @@ resetButton.addEventListener('click', function(){
 if (Data.loadCurrentUser() === null) {
   pastUsersForm.hidden = true;
   currentUserSettings.hidden = true;
+  newUser.className = 'centerNewUserDefault';
+} else {
+  pastUsers.userNameSelected.value = Data.loadCurrentUser().userName;
+  difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
 }
 
-//
-difficultySelection.onchange = function () {
-  var elem = (typeof this.selectedIndex === "undefined" ? window.event.srcElement : this);
+selectedCurrentUser.onchange = function() {
+  var elem = (typeof this.selectedIndex === 'undefined' ? window.event.srcElement : this);
   var value = elem.value || elem.options[elem.selectedIndex].value;
-  alert(value);
+  resetBalanceButton.textContent = 'Reset Balance of $' + Data.loadUserName(value).moneyBalance();
+  difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
+};
+
+difficultySelection.onchange = function () {
+  var elem = (typeof this.selectedIndex === 'undefined' ? window.event.srcElement : this);
+  var value = elem.value || elem.options[elem.selectedIndex].value;
+  var currentUser = Data.loadCurrentUser();
+  if ('easy' === value ) {
+    currentUser.slots = ['wildcard.gif','wildcard.gif','dancer.png','dog.png','poop.png','unicorn.png'];
+    currentUser.difficulty = 'easy';
+  } if ('medium' === value) {
+    currentUser.slots = ['wildcard.gif','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+    currentUser.difficulty = 'medium';
+  } if ('hard' === value) {
+    currentUser.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+    currentUser.difficulty = 'hard';
+  }
+  Data.saveUser(currentUser);
+  window.location.href = 'index.html';
 };

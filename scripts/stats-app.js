@@ -40,20 +40,36 @@ function setUpData() {
     rank[i] = [userNames[i], moneyBalance[i]];
   }
 
-  rank.sort(sortFunction);
+  // sorted function inspired by StackOverflow
+  rank.sort(function(a, b) {
+    var avalue = a[1],
+      bvalue = b[1];
+    if (avalue < bvalue) {
+      return -1;
+    }
+    if (avalue > bvalue) {
+      return 1;
+    }
+    return 0;
+  });
+
+  // sorted function inspired by StackOverflow
+  rank = rank.sort(function(a, b) {
+    var avalue = a[1],
+      bvalue = b[1];
+    if (avalue < bvalue) {
+      return -1;
+    }
+    if (avalue > bvalue) {
+      return 1;
+    }
+    return 0;
+  });
+  rank = rank.reverse();
+
  //generate a rankList
   for (i = 0; i < userNames.length; i ++) {
     rankList[i] = i + 1;
-  }
-}
-
-//function to sort the array. mofidifed from source code on stackflow
-function sortFunction(a, b) {
-  if (a[0] === b[0]) {
-    return 0;
-  }
-  else {
-    return (a[0] < b[0]) ? -1 : 1;
   }
 }
 

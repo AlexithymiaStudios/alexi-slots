@@ -128,6 +128,11 @@ input[type=text]:focus {
     border-color:#333;
 }
 
+.centerNewUserDefault {
+  margin-left: 36%;
+  margin-right: 36%;
+}
+
 #optionMain label {
   display: block;
 }
@@ -136,7 +141,7 @@ input[type=text]:focus {
   margin: 5%;
 }
 
-#newUser{
+.leftNewUser {
   float: left;
   margin-left: 11%
 }
@@ -194,8 +199,9 @@ input[type=text]:focus {
 
 #instructions {
   border: 6px dotted yellow;
-  width: 770px;
-  margin: 0% 15% 4% 11%;
+  margin-left: 11%;
+  margin-right: 11%;
+  margin-bottom: 3%;
   padding: 5%;
   text-align: center;
   font-family: 'Roboto Mono', monospace;

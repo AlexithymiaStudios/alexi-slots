@@ -86,6 +86,13 @@ form {
   margin: 2%
 }
 
+#currentUserSettings form {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 10px;
+  width: 350px;
+}
+
 h3, .right {
   font-size: 24px;
   text-align: center;

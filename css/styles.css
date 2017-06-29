@@ -288,6 +288,11 @@ p {
   background-size: 100%;
 }
 
+.pairBigBG {
+  background: url('../img/pairbg.png');
+  background-size: 100%;
+}
+
 .jackpotBackground {
   background: url('../img/starsrain.gif');
   background-size: contain;

@@ -28,8 +28,8 @@ if (Data.loadCurrentUser() === null) {
 playButton.addEventListener('click', function(){
   // add disabled property to button so it can't be clicked during animation
   playButton.disabled = true;
-  // remove animation backgrounds
-
+  // remove response backgrounds
+  response.className = ' ';
   // picks a random img from emojiArray
   currentEmojis = getRandomEmojis();
   // update rounds in currentUser
@@ -107,6 +107,7 @@ function updateWins(){
      {
     currentUser.pairs++;
     setTimeout(function(){
+      response.className = ' pairBigBG';
       winningDivAnimations('pairBackground');
       winningImgAnimations('pairZoom');
     }, 1600);

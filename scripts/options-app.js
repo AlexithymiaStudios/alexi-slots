@@ -80,6 +80,10 @@ function checkIfValid(formInput) {
     alert('Your first name is not valid. Only characters A-Z and a-z are acceptable.');
     formInput.focus();
     return false;
+  } else if (Data.loadUserName(formInput.value) !== null){
+    alert('This Username already exists!');
+    formInput.focus();
+    return false;
   };
   return true;
 };

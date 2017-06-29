@@ -87,8 +87,19 @@ form {
   margin: 2%
 }
 
+#label {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 #difficultyLevel {
   border: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+select#difficultySelection {
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 5%;
 }
 
 input {
@@ -140,6 +151,7 @@ input[type=text]:focus {
   margin-right: 11%
 }
 
+/*modified from stackflow*/
 #optionMain button {
   color: white;
   font-size: 20px;
@@ -187,7 +199,7 @@ input[type=text]:focus {
 
 #instructions {
   border: 6px dotted yellow;
-  width: 650px;
+  width: 770px;
   margin: 0% 15% 4% 11%;
   padding: 5%;
   text-align: center;
@@ -197,7 +209,7 @@ input[type=text]:focus {
 #instructions h3 {
   font-size: 24px;
   margin-top: 1%;
-  margin-right: 5%;
+  margin-right: 10%;
   text-align: center;
 }
 

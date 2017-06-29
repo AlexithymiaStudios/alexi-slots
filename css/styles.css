@@ -103,6 +103,10 @@ h3, .right {
   height: auto;
 }
 
+#resetBalance p {
+  padding: 20px 0px;
+}
+
 #label {
   margin-top: 0;
   padding-top: 0;
@@ -120,9 +124,9 @@ h3, .right {
   height: auto;
 }
 
-select#difficultySelection {
+select#difficultySelection, select#slotsSelection {
   font-family: 'Roboto Mono', monospace;
-  margin-top: 5%;
+  margin: 5% auto;
 }
 
 input {

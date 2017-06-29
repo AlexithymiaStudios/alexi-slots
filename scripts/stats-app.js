@@ -9,9 +9,6 @@ var losses = [];
 var jackpots = [];
 var moneyBalance = [];
 var pairs = [];
-var initialBalance = 25;
-var jackpotWorth = 3;
-var pairWorth = 2;
 var rankList = [];
 
 /*********** SETUP***********/
@@ -35,36 +32,54 @@ function setUpData() {
     losses.push(allData[i].losses());
     jackpots.push(allData[i].jackpots);
     pairs.push(allData[i].pairs);
-    moneyBalance.push(pairs[i] * pairWorth + jackpots[i] * jackpotWorth - losses[i] + initialBalance);
+    moneyBalance.push(allData[i].moneyBalance());
   }
+
   //create a 2d array for userName and moneyBalance
   for (i = 0; i < userNames.length; i ++) {
     rank[i] = [userNames[i], moneyBalance[i]];
   }
-  rank.sort(sortFunction);
+
+  // sorted function inspired by StackOverflow
+  rank.sort(function(a, b) {
+    var avalue = a[1],
+      bvalue = b[1];
+    if (avalue < bvalue) {
+      return -1;
+    }
+    if (avalue > bvalue) {
+      return 1;
+    }
+    return 0;
+  });
+
+  // sorted function inspired by StackOverflow
+  rank = rank.sort(function(a, b) {
+    var avalue = a[1],
+      bvalue = b[1];
+    if (avalue < bvalue) {
+      return -1;
+    }
+    if (avalue > bvalue) {
+      return 1;
+    }
+    return 0;
+  });
+  rank = rank.reverse();
+
  //generate a rankList
   for (i = 0; i < userNames.length; i ++) {
     rankList[i] = i + 1;
-    console.log(rankList[i]);
-  }
-}
-//function to sort the array. mofidifed from source code on stackflow
-function sortFunction(a, b) {
-  if (a[0] === b[0]) {
-    return 0;
-  }
-  else {
-    return (a[0] < b[0]) ? -1 : 1;
   }
 }
 
 //render a list
 function renderList() {
   var list = document.getElementById('list');
-  var userUl = document.createElement('ul');
+  var userUl = document.createElement('ol');
   for (var i = 0; i < rank.length; i++) {
     var userLi = document.createElement('li');
-    userLi.textContent = rank[i][0] + '  rank: ' + rankList[i] + '; money balance: ' + rank[i][1] + '; jackpots: ' + jackpots[i] + '; pairs' + pairs[i] + 'losses: ' + losses[i];
+    userLi.textContent = rankList[i] + ': ' + rank[i][0] + ' (Balance: $' + rank[i][1] + ', Jackpots: ' + jackpots[i] + ', Pairs: ' + pairs[i] + ')';
     userUl.append(userLi);
   }
   list.append(userUl);

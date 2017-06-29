@@ -1,3 +1,4 @@
+
 'use strict';
 
 /*********** VARIABLE ***********/
@@ -23,6 +24,7 @@ function insertNewUser() {
   var selectUser = document.getElementById('selectUser');
   var button = document.createElement('button');
   form.setAttribute('id', 'newUser');
+  form.setAttribute('class', 'leftNewUser');
   var input = document.createElement('input');
   input.setAttribute('type', 'text');
   input.setAttribute('name', 'userNameSelected');
@@ -106,6 +108,7 @@ resetButton.addEventListener('click', function(){
 if (Data.loadCurrentUser() === null) {
   pastUsersForm.hidden = true;
   currentUserSettings.hidden = true;
+  newUser.className = 'centerNewUserDefault';
 } else {
   pastUsers.userNameSelected.value = Data.loadCurrentUser().userName;
 }
@@ -127,7 +130,6 @@ difficultySelection.onchange = function () {
   } if ('hard' === value) {
     currentUser.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
   }
-  console.log(value);
-  console.log(currentUser);
   Data.saveUser(currentUser);
+  window.location.href = 'index.html';
 };

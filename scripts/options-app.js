@@ -111,12 +111,14 @@ if (Data.loadCurrentUser() === null) {
   newUser.className = 'centerNewUserDefault';
 } else {
   pastUsers.userNameSelected.value = Data.loadCurrentUser().userName;
+  difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
 }
 
 selectedCurrentUser.onchange = function() {
   var elem = (typeof this.selectedIndex === 'undefined' ? window.event.srcElement : this);
   var value = elem.value || elem.options[elem.selectedIndex].value;
   resetBalanceButton.textContent = 'Reset Balance of $' + Data.loadUserName(value).moneyBalance();
+  difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
 };
 
 difficultySelection.onchange = function () {
@@ -125,10 +127,13 @@ difficultySelection.onchange = function () {
   var currentUser = Data.loadCurrentUser();
   if ('easy' === value ) {
     currentUser.slots = ['wildcard.gif','wildcard.gif','dancer.png','dog.png','poop.png','unicorn.png'];
+    currentUser.difficulty = 'easy';
   } if ('medium' === value) {
     currentUser.slots = ['wildcard.gif','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+    currentUser.difficulty = 'medium';
   } if ('hard' === value) {
     currentUser.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+    currentUser.difficulty = 'hard';
   }
   Data.saveUser(currentUser);
   window.location.href = 'index.html';

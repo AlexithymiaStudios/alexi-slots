@@ -13,8 +13,10 @@ function User(userName) {
   this.jackpots = 0;
   this.pairs = 0;
   this.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+  this.difficulty = 'hard';
 }
 /*********** USER METHODS ***********/
+
 User.prototype.resetStats = function(){
   this.jackpots = 0;
   this.pairs = 0;
@@ -87,5 +89,6 @@ function convertObjectToUser(object) {
   user.jackpots = object.jackpots;
   user.pairs = object.pairs;
   user.slots = object.slots;
+  user.difficulty = object.difficulty;
   return user;
 }

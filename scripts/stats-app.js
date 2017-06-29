@@ -79,7 +79,7 @@ function renderList() {
   var userUl = document.createElement('ol');
   for (var i = 0; i < rank.length; i++) {
     var userLi = document.createElement('li');
-    userLi.textContent = rankList[i] + ': ' + rank[i][0] + ' (Balance: $' + rank[i][1] + ', Jackpots: ' + jackpots[i] + ', Pairs: ' + pairs[i] + ')';
+    userLi.textContent = rankList[i] + ': ' + rank[i][0] + ' (Balance: $' + rank[i][1] + ')';
     userUl.append(userLi);
   }
   list.append(userUl);

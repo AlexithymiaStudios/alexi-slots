@@ -43,7 +43,7 @@ function insertNewUser() {
   form.appendChild(label);
   form.appendChild(input);
   button.setAttribute('id', 'addNewUser');
-  button.textContent = 'Start Playing';
+  button.textContent = 'Create User';
   form.appendChild(button);
   selectUser.appendChild(form);
 }
@@ -90,7 +90,11 @@ addNewUserButton.addEventListener('click', function(event) {
   if (checkIfValid(newUserForm.userNameSelected)){
     var newUser = new User(newUserForm.userNameSelected.value);
     Data.saveUser(newUser);
-    console.log(newUserForm.userNameSelected.value);
+    pastUsersForm.hidden = false;
+    currentUserSettings.hidden = false;
+    resetBalanceButton.textContent = 'Reset Balance of $' + Data.loadCurrentUser().moneyBalance();
+    insertEmojiSetsOptions();
+    emojiSet.slotsSelection.value = Data.loadCurrentUser().prefferedSlots;
     window.location.href = 'index.html';
   };
 });
@@ -124,6 +128,7 @@ if (Data.loadCurrentUser() === null) {
   difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
   insertEmojiSetsOptions();
   emojiSet.slotsSelection.value = Data.loadCurrentUser().prefferedSlots;
+  resetBalanceButton.textContent = 'Reset Balance of $' + Data.loadCurrentUser().moneyBalance();
 }
 
 slotsSelection.onchange = function () {
@@ -132,7 +137,7 @@ slotsSelection.onchange = function () {
   var currentUser = Data.loadCurrentUser();
   currentUser.prefferedSlots = value;
   Data.saveUser(currentUser);
-  window.location.href = 'options.html';
+  window.location.href = 'options.html#pastUsers';
 };
 
 selectedCurrentUser.onchange = function() {
@@ -140,6 +145,7 @@ selectedCurrentUser.onchange = function() {
   var value = elem.value || elem.options[elem.selectedIndex].value;
   resetBalanceButton.textContent = 'Reset Balance of $' + Data.loadUserName(value).moneyBalance();
   difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
+  emojiSet.slotsSelection.value = Data.loadCurrentUser().prefferedSlots;
 };
 
 difficultySelection.onchange = function () {
@@ -149,5 +155,5 @@ difficultySelection.onchange = function () {
   currentUser.difficulty = value;
   console.log(value);
   Data.saveUser(currentUser);
-  window.location.href = 'options.html';
+  window.location.href = 'options.html#emojiSet';
 };

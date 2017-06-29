@@ -132,7 +132,7 @@ select {
   font-family: 'Roboto Mono', monospace;
 }
 
-option {
+option, select {
   font-size: 20px;
   color: black;
   font-family: 'Roboto Mono', monospace;

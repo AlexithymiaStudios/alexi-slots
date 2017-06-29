@@ -123,7 +123,18 @@ if (Data.loadCurrentUser() === null) {
   pastUsers.userNameSelected.value = Data.loadCurrentUser().userName;
   difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
   insertEmojiSetsOptions();
+  emojiSet.slotsSelection.value = Data.loadCurrentUser().prefferedSlots;
 }
+
+slotsSelection.onchange = function () {
+  var elem = (typeof this.selectedIndex === 'undefined' ? window.event.srcElement : this);
+  var value = elem.value || elem.options[elem.selectedIndex].value;
+  var currentUser = Data.loadCurrentUser();
+  currentUser.prefferedSlots = value;
+  Data.saveUser(currentUser);
+  console.log(value);
+  console.log('hey');
+};
 
 selectedCurrentUser.onchange = function() {
   var elem = (typeof this.selectedIndex === 'undefined' ? window.event.srcElement : this);

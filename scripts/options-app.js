@@ -132,8 +132,6 @@ slotsSelection.onchange = function () {
   var currentUser = Data.loadCurrentUser();
   currentUser.prefferedSlots = value;
   Data.saveUser(currentUser);
-  console.log(value);
-  console.log('hey');
 };
 
 selectedCurrentUser.onchange = function() {
@@ -147,13 +145,7 @@ difficultySelection.onchange = function () {
   var elem = (typeof this.selectedIndex === 'undefined' ? window.event.srcElement : this);
   var value = elem.value || elem.options[elem.selectedIndex].value;
   var currentUser = Data.loadCurrentUser();
-  if ('easy' === value ) {
-    currentUser.difficulty = 'easy';
-  } if ('medium' === value) {
-    currentUser.difficulty = 'medium';
-  } if ('hard' === value) {
-    currentUser.difficulty = 'hard';
-  }
+  currentUser.difficulty = value;
+  console.log(value);
   Data.saveUser(currentUser);
-  window.location.href = 'index.html';
 };

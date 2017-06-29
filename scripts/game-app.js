@@ -50,7 +50,8 @@ playButton.addEventListener('click', function(){
   currentUser = Data.loadCurrentUser();
   //if balance is 0
   setTimeout(isOutOfMoney, 2050);
-  // turn button back on
+  // reset the random slots;
+  emojiArray = currentUser.slots();
 });
 
 /*********** FUNCTIONS ***********/

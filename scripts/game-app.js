@@ -18,7 +18,7 @@ if (Data.loadCurrentUser() === null) {
   isOutOfMoney();
 } else {
   var currentUser = Data.loadCurrentUser();
-  emojiArray = currentUser.slots;
+  emojiArray = currentUser.slots();
   renderUserName();
   renderBalance();
 }

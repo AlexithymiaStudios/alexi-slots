@@ -26,9 +26,9 @@ function User(userName) {
 /*********** USER METHODS ***********/
 
 User.prototype.slots = function() {
-  if (this.difficulty = 'easy') {
+  if (this.difficulty === 'easy') {
     return insertWild(slots[this.prefferedSlots], 2);
-  } else if (this.difficulty = 'medium') {
+  } else if (this.difficulty === 'medium') {
     return insertWild(slots[this.prefferedSlots], 1);
   } else {
     return slots[this.prefferedSlots];

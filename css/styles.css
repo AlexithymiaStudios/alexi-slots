@@ -86,14 +86,28 @@ form {
   margin: 2%
 }
 
+h3, .right {
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  height: auto;
+}
+
 #label {
   margin-top: 0;
   padding-top: 0;
 }
+#resetBalance {
+  clear: both;
+}
+#emojiSet {
+  float: right;
+}
 
-#difficultyLevel {
+#difficultyLevel, #emojiSet {
   border: none;
   font-family: 'Roboto Mono', monospace;
+  height: auto;
 }
 
 select#difficultySelection {
@@ -122,6 +136,7 @@ option {
   font-size: 20px;
   color: black;
   font-family: 'Roboto Mono', monospace;
+  text-transform: capitalize;
 }
 
 input[type=text]:focus {
@@ -195,6 +210,7 @@ input[type=text]:focus {
   margin-left: 11%;
   margin-right: 11%;
   margin-bottom: 2%;
+  height: auto;
 }
 
 #instructions {

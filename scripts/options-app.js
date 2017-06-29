@@ -18,6 +18,16 @@ var pastUsersForm = document.getElementById('pastUsers');
 var newUserForm = document.getElementById('newUser');
 
 /*********** FUNCTIONS ***********/
+
+function insertEmojiSetsOptions() {
+  for (var key in slots) {
+    var option = document.createElement('option');
+    option.setAttribute ('value', key);
+    option.textContent = key;
+    slotsSelection.appendChild(option);
+  };
+}
+
 function insertNewUser() {
   var form = document.createElement('form');
   var label = document.createElement('label');
@@ -112,6 +122,7 @@ if (Data.loadCurrentUser() === null) {
 } else {
   pastUsers.userNameSelected.value = Data.loadCurrentUser().userName;
   difficultyLevel.difficultySelected.value = Data.loadCurrentUser().difficulty;
+  insertEmojiSetsOptions();
 }
 
 selectedCurrentUser.onchange = function() {

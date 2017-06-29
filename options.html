@@ -27,6 +27,7 @@
         </div>
       </section>
       <section class="right" id="currentUserSettings">
+        <h3>Game Settings</h3>
         <form id='difficultyLevel'>
           <label id='label'>Current User Settings</label>
           <select name='difficultySelected' id='difficultySelection'>
@@ -34,9 +35,16 @@
             <option value="medium">Medium</option>
             <option value="easy">Easy</option>
           </select>
-      </form>
-        <button id="resetBalanceButton">Reset Balance</button>
-        <p> Resetting your balance will erase all of your user stats and set your balance beck to the default ($25).</p>
+        </form>
+        <form id='emojiSet'>
+          <label>Choose Emoji Set</label>
+          <select name='slotsSelected' id='slotsSelection'>
+          </select>
+        </form>
+        <div id='resetBalance'>
+          <button id="resetBalanceButton">Reset Balance</button>
+          <p> Resetting your balance will erase all of your user stats and set your balance beck to the default ($25).</p>
+        </div>
       </section>
       <section id="instructions">
         <h3>Instructions</h3>

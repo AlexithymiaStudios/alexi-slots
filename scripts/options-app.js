@@ -132,6 +132,7 @@ slotsSelection.onchange = function () {
   var currentUser = Data.loadCurrentUser();
   currentUser.prefferedSlots = value;
   Data.saveUser(currentUser);
+  window.location.href = 'options.html';
 };
 
 selectedCurrentUser.onchange = function() {
@@ -148,4 +149,5 @@ difficultySelection.onchange = function () {
   currentUser.difficulty = value;
   console.log(value);
   Data.saveUser(currentUser);
+  window.location.href = 'options.html';
 };

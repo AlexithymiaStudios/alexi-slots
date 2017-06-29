@@ -40,7 +40,7 @@ User.prototype.resetStats = function(){
 };
 
 User.prototype.moneyBalance = function() {
-  return (this.pairs * pairWorth + this.jackpots * jackpotWorth ) - this.losses() + initialBalance;
+  return (this.pairs * pairWorth + this.jackpots * jackpotWorth ) - this.rounds + initialBalance;
 };
 
 User.prototype.losses = function() {

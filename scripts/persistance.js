@@ -5,6 +5,7 @@ var initialBalance = 25;
 var jackpotWorth = 5;
 var pairWorth = 2;
 var Data = {};
+var slots = {standard:['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png']};
 
 /*********** USER CONSTRUCTOR ***********/
 function User(userName) {
@@ -12,10 +13,19 @@ function User(userName) {
   this.rounds = 0;
   this.jackpots = 0;
   this.pairs = 0;
-  this.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
   this.difficulty = 'hard';
 }
 /*********** USER METHODS ***********/
+
+User.prototype.slots = function() {
+  if (this.difficulty = 'easy') {
+    return ['wildcard.gif','wildcard.gif','dancer.png','dog.png','poop.png','unicorn.png'];
+  } else if (this.difficulty = 'medium') {
+    return ['wildcard.gif','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+  } else {
+    return ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
+  }
+};
 
 User.prototype.resetStats = function(){
   this.jackpots = 0;
@@ -88,7 +98,6 @@ function convertObjectToUser(object) {
   user.rounds = object.rounds;
   user.jackpots = object.jackpots;
   user.pairs = object.pairs;
-  user.slots = object.slots;
   user.difficulty = object.difficulty;
   return user;
 }

@@ -126,13 +126,10 @@ difficultySelection.onchange = function () {
   var value = elem.value || elem.options[elem.selectedIndex].value;
   var currentUser = Data.loadCurrentUser();
   if ('easy' === value ) {
-    currentUser.slots = ['wildcard.gif','wildcard.gif','dancer.png','dog.png','poop.png','unicorn.png'];
     currentUser.difficulty = 'easy';
   } if ('medium' === value) {
-    currentUser.slots = ['wildcard.gif','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
     currentUser.difficulty = 'medium';
   } if ('hard' === value) {
-    currentUser.slots = ['alien.png','cat.png','dancer.png','dog.png','poop.png','unicorn.png'];
     currentUser.difficulty = 'hard';
   }
   Data.saveUser(currentUser);

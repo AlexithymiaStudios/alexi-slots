@@ -4,38 +4,43 @@
   - Introduce Jose, Quinn, Tyler, and Alana
   - Explain the basic concept of our project.
   - Talk about user scenarios
+    - Bored Web Surfer (looking for a fun and easy game that he can play at work. He needs something that persists so he can close his window when his boss walks by).
+    - Gambling Fan (looking for a real Vegas experience!)
+    - Commuter with Tablet (wants a fun and easy game to play on hr commute that will persist so she can come back to it next time she's on the bus)
 
-## Demo
+## Create a Single User
+- Instructions
+  - Explain starting values
+  - Explain how a pair works
+- (Create your first user)
 
-### Create a Single User
-- show off instruction
-- create your first user
+## Change Emoji Set / Game Play
+- (Show off all of the emoji sets until we hit zero)
+- Talk about the animations
+  - Background spinning colors
+  - spinning emojis
+  - winning animations
+- Multiple clicks on the lever don't register while the animation is going
+- We bring in dynamic values at the top of the page
 
-### Change Emoji Set / Game Play
-- Show off all of the sets until we hit zero
-- When the animation goes you can't click on the lever
-- Talk about animations while we go through all emojis sets
-- Dynamically bringing in user details at top of page
+## Reset Your Wallet
+- When you run out of money, you're directed to reset your balance. When you do this, you're forced to reset all of your stats by recreating the user object
+- Money is determined by total pairs, total rounds and jackpots via a moneyblanace function
 
-### Reset Your Wallet
-- When you run out of money, this is how you Reset
-- Money is deterined by total pairs, total rounds and jackpots via a moneyblanace function
-- It resets the user object
+## Make a Bunch More users
+ - Talk through user creation process by creating a total of four users (one for each team member)
 
-### Make a Bunch More users
- - show off user creation process (make more users - one for each of us)
+## Change Difficulty
+- Show off easy mode.
+  - For medium mode, on each spin, we shuffle the emoji deck and replace 1 of the emojis with a wildcard. For easy more, two emojis are replaced
+- Each user's difficulty and emoji set is persisted per user. When you select another user, it shows that user's preferences below.
 
-### Change Difficulty
-- Show off easy mode. On each spin, we shuffle the emoji deck and replace 1 with emoji with a wildcard for medium. For easy more, two emojis are replaced
-- Each user can set custom preferences that are persisted across pages and users
-- show how game settings change when you select user from drop down
-
-### Stats
+## Stats
 - (make sure there are four users at this point and that they have different balances)
-- we rank the users by money at top of stats pages
+- We rank the users by money at top of stats pages
 - we use chart.js to display interactive charts for each user
 
 ## Questions?
-- go set emoji set to team
-- spin once or twice.
+- Go set emoji set to team
+- Spin once or twice.
 - Ask for questions
